@@ -165,8 +165,8 @@
 <li>持久化(persistence)：<strong>把数据保存到可掉电式存储设备中以供之后使用</strong>。大多数情况下，特别是企业级应用，<strong>数据持久化意味着将内存中的数据保存到硬盘上加以”固化”</strong>，而持久化的实现过程大多通过各种关系数据库来完成。</li>
 <li>持久化的主要应用是<strong>将内存中的数据存储在关系型数据库中</strong>，当然也可以存储在磁盘文件、XML数据文件中。</li>
 </ul>
-<p><img src="/imgs/1554904031332.png" alt="1554904031332"></p>
-<p><img src="/imgs/1554944967857.png" alt="1554944967857"></p>
+<p><img src="/mysql/1554904031332.png" alt="1554904031332"></p>
+<p><img src="/mysql/1554944967857.png" alt="1554944967857"></p>
 <h2 id="1-2-数据库的相关概念"><a href="#1-2-数据库的相关概念" class="headerlink" title="1.2 数据库的相关概念"></a>1.2 数据库的相关概念</h2><table>
 <thead>
 <tr>
@@ -190,12 +190,12 @@
 </tr>
 </tbody></table>
 <h2 id="1-3-常见的数据库管理系统-DBMS"><a href="#1-3-常见的数据库管理系统-DBMS" class="headerlink" title="1.3 常见的数据库管理系统(DBMS)"></a>1.3 常见的数据库管理系统(DBMS)</h2><p>目前互联网上常见的数据库管理软件有Sybase、DB2、Oracle、MySQL、Access、Visual Foxpro（面向对象型）、MS SQL Server、Informix、PostgreSQL（最符合SQL标准，但是性能差）这几种。以下是2019年<strong>DB-Engines Ranking</strong> 对各数据库受欢迎程度进行调查后的统计结果：（查看数据库最新排名:<a target="_blank" rel="noopener" href="https://db-engines.com/en/ranking%EF%BC%89">https://db-engines.com/en/ranking）</a></p>
-<p><img src="/imgs/1554945324249.png" alt="1554945324249"></p>
+<p><img src="/mysql/1554945324249.png" alt="1554945324249"></p>
 <p>对应的走势图：（<a target="_blank" rel="noopener" href="https://db-engines.com/en/ranking_trend%EF%BC%89">https://db-engines.com/en/ranking_trend）</a></p>
-<p><img src="/imgs/1554945531693.png" alt="1554945531693"></p>
+<p><img src="/mysql/1554945531693.png" alt="1554945531693"></p>
 <p>- </p>
 <h1 id="第二章-MySQL数据库"><a href="#第二章-MySQL数据库" class="headerlink" title="第二章 MySQL数据库"></a>第二章 MySQL数据库</h1><h2 id="2-1-MySQL概述"><a href="#2-1-MySQL概述" class="headerlink" title="2.1 MySQL概述"></a>2.1 MySQL概述</h2><p><strong>MySQL</strong>是一种开放源代码的关系型数据库管理系统，开发者为瑞典MySQL AB公司。在2008年1月16号被Sun公司收购。而2009年,SUN又被Oracle收购。目前 MySQL被广泛地应用在Internet上的中小型网站中。由于其<strong>体积小、速度快、总体拥有成本低，尤其是开放源码这一特点，使得很多互联网公司选择了MySQL作为网站数据库</strong>（Facebook, Twitter, YouTube，阿里的蚂蚁金服，去哪儿，魅族，百度外卖，腾讯）。</p>
-<p><img src="/imgs/1554945212252.png" alt="1554945212252"></p>
+<p><img src="/mysql/1554945212252.png" alt="1554945212252"></p>
 <ul>
 <li><p>阿里巴巴&#x2F;蚂蚁金服主要使用两种关系数据库：OceanBase和MySQL。数据规模：MySQL单台机器TB级，OceanBase单个集群从几个TB到几百个TB皆有。</p>
 </li>
@@ -209,13 +209,13 @@
 </li>
 </ul>
 <h2 id="2-2-MySQL数据库的卸载"><a href="#2-2-MySQL数据库的卸载" class="headerlink" title="2.2 MySQL数据库的卸载"></a>2.2 MySQL数据库的卸载</h2><h3 id="步骤一：软件的卸载"><a href="#步骤一：软件的卸载" class="headerlink" title="步骤一：软件的卸载"></a>步骤一：软件的卸载</h3><p><strong>方式一：通过控制面板卸载</strong></p>
-<p><img src="/imgs/MySQL%E5%8D%B8%E8%BD%BD1.jpg"></p>
+<p><img src="/mysql/MySQL%E5%8D%B8%E8%BD%BD1.jpg"></p>
 <p><strong>方式二：通过360或电脑管家等软件卸载</strong></p>
-<p><img src="/imgs/MySQL%E5%8D%B8%E8%BD%BD2.jpg"></p>
+<p><img src="/mysql/MySQL%E5%8D%B8%E8%BD%BD2.jpg"></p>
 <p> <strong>方式三：通过安装包提供的卸载功能卸载</strong></p>
-<p><img src="/imgs/MySQL%E5%8D%B8%E8%BD%BD3.jpg"></p>
+<p><img src="/mysql/MySQL%E5%8D%B8%E8%BD%BD3.jpg"></p>
 <h3 id="步骤二：清理残余文件"><a href="#步骤二：清理残余文件" class="headerlink" title="步骤二：清理残余文件"></a>步骤二：清理残余文件</h3><p>如果再次安装不成功，可以卸载后对残余文件进行清理后再安装。</p>
-<p><img src="/imgs%5C%E6%B8%85%E7%90%86%E6%AE%8B%E4%BD%99%E6%96%87%E4%BB%B6.jpg"></p>
+<p><img src="/mysql%5C%E6%B8%85%E7%90%86%E6%AE%8B%E4%BD%99%E6%96%87%E4%BB%B6.jpg"></p>
 <blockquote>
 <p>注意：请在卸载前做好数据备份</p>
 <p>在操作完以后，需要重启计算机，然后进行安装即可。<strong>如果仍然安装失败，需要继续操作如下步骤三。</strong></p>
@@ -229,52 +229,52 @@
 </blockquote>
 <h2 id="2-3-MySQL数据库的安装"><a href="#2-3-MySQL数据库的安装" class="headerlink" title="2.3 MySQL数据库的安装"></a>2.3 MySQL数据库的安装</h2><ul>
 <li><p>双击<code>mysql-installer-community-5.7.28.0.msi</code>,进入安装界面后选择<strong>Custom自定义安装</strong>，点击<strong>Next</strong></p>
-<p>  <img src="/imgs/MySQL%E5%AE%89%E8%A3%851.jpg"></p>
+<p>  <img src="/mysql/MySQL%E5%AE%89%E8%A3%851.jpg"></p>
 </li>
 <li><p>在左侧目录中选择<strong>MySQL Server 5.7.28 -X64</strong>，点击<code>→</code>加载到右侧，点击右下角<strong>Advanced Options设置安装路径</strong></p>
-<p>  <img src="/imgs/MySQL%E5%AE%89%E8%A3%852.jpg"></p>
+<p>  <img src="/mysql/MySQL%E5%AE%89%E8%A3%852.jpg"></p>
 </li>
 <li><p>将<strong>安装路径</strong>和<strong>数据路径</strong>修改到<code>D:\develop\</code>下，点击<strong>OK</strong></p>
-<p>  <img src="/imgs/MySQL%E5%AE%89%E8%A3%853.jpg"></p>
+<p>  <img src="/mysql/MySQL%E5%AE%89%E8%A3%853.jpg"></p>
 </li>
 <li><p>点击<strong>Next下一步</strong></p>
-<p>  <img src="/imgs/MySQL%E5%AE%89%E8%A3%854.jpg"></p>
+<p>  <img src="/mysql/MySQL%E5%AE%89%E8%A3%854.jpg"></p>
 </li>
 <li><p>点击<strong>Next下一步</strong></p>
-<p>  <img src="/imgs/MySQL%E5%AE%89%E8%A3%855.jpg"></p>
+<p>  <img src="/mysql/MySQL%E5%AE%89%E8%A3%855.jpg"></p>
 </li>
 <li><p>点击<strong>Execute执行安装</strong></p>
-<p>  <img src="/imgs/MySQL%E5%AE%89%E8%A3%856.jpg"></p>
+<p>  <img src="/mysql/MySQL%E5%AE%89%E8%A3%856.jpg"></p>
 </li>
 <li><p>安装完成，点击<strong>Next下一步</strong></p>
-<p>  <img src="/imgs/MySQL%E5%AE%89%E8%A3%857.jpg"></p>
+<p>  <img src="/mysql/MySQL%E5%AE%89%E8%A3%857.jpg"></p>
 </li>
 <li><p>点击<strong>Next下一步</strong></p>
-<p>  <img src="/imgs/MySQL%E5%AE%89%E8%A3%858.jpg"></p>
+<p>  <img src="/mysql/MySQL%E5%AE%89%E8%A3%858.jpg"></p>
 </li>
 <li><p>点击<strong>Next下一步</strong></p>
-<p>  <img src="/imgs/MySQL%E5%AE%89%E8%A3%859.jpg"></p>
+<p>  <img src="/mysql/MySQL%E5%AE%89%E8%A3%859.jpg"></p>
 </li>
 <li><p>将MySQL配置类型选择<strong>Development Computer开发电脑设置</strong>，点击<strong>Next下一步</strong></p>
-<p>  <img src="/imgs/MySQL%E5%AE%89%E8%A3%8510.jpg"></p>
+<p>  <img src="/mysql/MySQL%E5%AE%89%E8%A3%8510.jpg"></p>
 </li>
 <li><p>设置MySQL密码，因为管理员用户为root，学习初期建议将MySQL数据库密码设置为比较简单一点，比如(123456)，设置完成后，点击<strong>Next下一步</strong></p>
-<p>  <img src="/imgs/MySQL%E5%AE%89%E8%A3%8511.jpg"></p>
+<p>  <img src="/mysql/MySQL%E5%AE%89%E8%A3%8511.jpg"></p>
 </li>
 <li><p>设置<strong>Windows Service 系统服务</strong>，设置完毕后点击<strong>Next下一步</strong></p>
-<p>  <img src="/imgs/MySQL%E5%AE%89%E8%A3%8512.jpg"></p>
+<p>  <img src="/mysql/MySQL%E5%AE%89%E8%A3%8512.jpg"></p>
 </li>
 <li><p>日志设置，不做任何修改，点击<strong>Next下一步</strong></p>
-<p>  <img src="/imgs/MySQL%E5%AE%89%E8%A3%8513.jpg"></p>
+<p>  <img src="/mysql/MySQL%E5%AE%89%E8%A3%8513.jpg"></p>
 </li>
 <li><p>高级设置，不做任何修改，点击<strong>Next下一步</strong></p>
-<p>  <img src="/imgs/MySQL%E5%AE%89%E8%A3%8514.jpg"></p>
+<p>  <img src="/mysql/MySQL%E5%AE%89%E8%A3%8514.jpg"></p>
 </li>
 <li><p>点击<strong>Execute执行设置</strong></p>
-<p>  <img src="/imgs/MySQL%E5%AE%89%E8%A3%8515.jpg"></p>
+<p>  <img src="/mysql/MySQL%E5%AE%89%E8%A3%8515.jpg"></p>
 </li>
 <li><p>安装完成，点击<strong>Finish完成</strong></p>
-<p>  <img src="/imgs/MySQL%E5%AE%89%E8%A3%8516.jpg"></p>
+<p>  <img src="/mysql/MySQL%E5%AE%89%E8%A3%8516.jpg"></p>
 </li>
 </ul>
 <h2 id="2-4-MySQL数据库服务的启动和停止"><a href="#2-4-MySQL数据库服务的启动和停止" class="headerlink" title="2.4 MySQL数据库服务的启动和停止"></a>2.4 MySQL数据库服务的启动和停止</h2><p>MySQL软件的服务器端必须先启动，客户端才可以连接和使用使用数据库。</p>
@@ -305,7 +305,7 @@
 </tr>
 </tbody></table>
 <h2 id="2-6-MySQL数据库客户端的登录"><a href="#2-6-MySQL数据库客户端的登录" class="headerlink" title="2.6 MySQL数据库客户端的登录"></a>2.6 MySQL数据库客户端的登录</h2><h3 id="方式一：MySQL自带客户端"><a href="#方式一：MySQL自带客户端" class="headerlink" title="方式一：MySQL自带客户端"></a>方式一：MySQL自带客户端</h3><p>开始菜单&#x3D;&#x3D;》所有程序&#x3D;&#x3D;》MySQL&#x3D;&#x3D;》MySQL Server 5.7&#x3D;&#x3D;》MySQL 5.7 Command Line Client</p>
-<p><img src="/imgs/1554910754482.png" alt="1554910754482"></p>
+<p><img src="/mysql/1554910754482.png" alt="1554910754482"></p>
 <blockquote>
 <p>说明：仅限于root用户</p>
 </blockquote>
@@ -323,22 +323,22 @@
 <p>  简写成：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql <span class="operator">-</span>u root <span class="operator">-</span>p</span><br><span class="line">Enter password:<span class="operator">*</span><span class="operator">*</span><span class="operator">*</span><span class="operator">*</span></span><br></pre></td></tr></table></figure>
 
-<p><img src="/imgs/1554910994523.png" alt="1554910994523"></p>
+<p><img src="/mysql/1554910994523.png" alt="1554910994523"></p>
 <p>连接成功后，有关于MySQL Server服务版本的信息，还有第几次连接的id标识。</p>
 <p>也可以在命令行通过以下方式获取MySQL Server服务版本的信息</p>
-<p><img src="/imgs/1554911047074.png" alt="1554911047074"></p>
+<p><img src="/mysql/1554911047074.png" alt="1554911047074"></p>
 <p>或<strong>登录</strong>后，通过以下方式查看当前版本信息：0</p>
-<p><img src="/imgs%5Csnipaste_20210218_110332.png" alt="snipaste_20210218_110332"></p>
+<p><img src="/mysql%5Csnipaste_20210218_110332.png" alt="snipaste_20210218_110332"></p>
 <h3 id="方式三：可视化工具"><a href="#方式三：可视化工具" class="headerlink" title="方式三：可视化工具"></a>方式三：可视化工具</h3><p>例如：Navicat Preminum，SQLyog 等工具</p>
 <p>还有其他工具：mysqlfront,phpMyAdmin</p>
-<h4 id="SQLyog"><a href="#SQLyog" class="headerlink" title="SQLyog"></a>SQLyog</h4><p><img src="/imgs/1554912367592.png" alt="1554912367592"></p>
-<p><img src="/imgs/1554912376445.png"></p>
-<h4 id="Navicat"><a href="#Navicat" class="headerlink" title="Navicat"></a>Navicat</h4><p><img src="/imgs/1557378069584.png"></p>
+<h4 id="SQLyog"><a href="#SQLyog" class="headerlink" title="SQLyog"></a>SQLyog</h4><p><img src="/mysql/1554912367592.png" alt="1554912367592"></p>
+<p><img src="/mysql/1554912376445.png"></p>
+<h4 id="Navicat"><a href="#Navicat" class="headerlink" title="Navicat"></a>Navicat</h4><p><img src="/mysql/1557378069584.png"></p>
 <h2 id="2-7-MySQL数据库的编码配置"><a href="#2-7-MySQL数据库的编码配置" class="headerlink" title="2.7 MySQL数据库的编码配置"></a>2.7 MySQL数据库的编码配置</h2><p>查看编码命令</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> variables <span class="keyword">like</span> <span class="string">&#x27;character_%&#x27;</span>;</span><br><span class="line"><span class="keyword">show</span> variables <span class="keyword">like</span> <span class="string">&#x27;collation_%&#x27;</span>;</span><br></pre></td></tr></table></figure>
 
-<p><img src="/imgs/MySQL%E7%BC%96%E7%A0%811.jpg"></p>
-<p><img src="/imgs/MySQL%E7%BC%96%E7%A0%812.jpg"></p>
+<p><img src="/mysql/MySQL%E7%BC%96%E7%A0%811.jpg"></p>
+<p><img src="/mysql/MySQL%E7%BC%96%E7%A0%812.jpg"></p>
 <ul>
 <li>如果是以上配置不做任何修改</li>
 </ul>
@@ -365,7 +365,7 @@
 <blockquote>
 <p>int(M)，必须和unsigned(数值类型无符号) zerofill(限制数字的位数)一起使用才有意义</p>
 </blockquote>
-<p><img src="/imgs/1560933629123.png" alt="1560933629123"></p>
+<p><img src="/mysql/1560933629123.png" alt="1560933629123"></p>
 <p>浮点型系列：float,double</p>
 <blockquote>
 <p>double(M,D)：表示最长为M位，其中小数点后D位      </p>
@@ -401,7 +401,7 @@
 
 <h2 id="6-5-常见函数"><a href="#6-5-常见函数" class="headerlink" title="6.5 常见函数"></a>6.5 常见函数</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br></pre></td><td class="code"><pre><span class="line">概念：类似于java的方法,将一组逻辑语句封装的方法体重，对外暴露方法名</span><br><span class="line">好处：1.隐藏了实现细节 2.提高代码的重用行</span><br><span class="line">调用：select 函数名(实参列表) [from 表]</span><br><span class="line">重点: 叫什么(函数名)，干什么(函数功能)</span><br><span class="line">分类</span><br><span class="line">   1.单行函数(给进去一些值，结果返回一个)</span><br><span class="line">   比如 concat,ifnull,length</span><br><span class="line">   2.分组函数(聚合函数)</span><br><span class="line">   功能:做统计使用</span><br><span class="line">1.单行函数（字符函数，数字函数，日期函数，流程控制函数，其他函数）</span><br><span class="line">1.1 字符函数</span><br><span class="line">  1.1.1  length 获取参数值的字节个数（需要考虑字符集）</span><br><span class="line">          select length(&#x27;john&#x27;);</span><br><span class="line">  1.1.2  concat 拼接字符串</span><br><span class="line">         select concat (name,&#x27;_&#x27;,age) from student;</span><br><span class="line">  1.1.3  upper（转大写） ,lower（转小写）</span><br><span class="line">         select upper(&#x27;john&#x27;);</span><br><span class="line">         select lower(&#x27;JOHN&#x27;);</span><br><span class="line">         案例：将姓大写名小写 然后进行拼接</span><br><span class="line">         select  concat(upper(&#x27;nihao&#x27;),lower(&#x27;zaijian&#x27;));</span><br><span class="line">  1.1.4 substr 截取字符串 在sql中索引从1开始</span><br><span class="line">         select substr(&#x27;2020-08-08&#x27;,1,4);</span><br><span class="line">         select substr(&#x27;李莫愁爱上了陆展元&#x27;,7,3);</span><br><span class="line">  1.1.5  instr (子串在大字符串里的第一次的出现起始索引，如果没有返回0)</span><br><span class="line">         select instr(&#x27;杨不悔爱上了殷六侠&#x27;,&#x27;殷六侠&#x27;);</span><br><span class="line">  1.1.6  trim 前后去字符</span><br><span class="line">         select trim(&#x27;       张翠山      &#x27;);</span><br><span class="line">         select trim(&#x27;a&#x27; from &#x27;aaaaaa张aaaa翠山aaaaaa&#x27;);</span><br><span class="line">  1.1.6  lpad，rpad（向左或者向右补全）</span><br><span class="line">         select lpad(&#x27;nihao&#x27;,10,&#x27;a&#x27;);</span><br><span class="line">         select rpad(&#x27;nihao&#x27;,10,&#x27;a&#x27;);</span><br><span class="line">  1.1.7  replace 替换</span><br><span class="line">         select replace(&#x27;张无忌爱上的了周芷若&#x27;,&#x27;周芷若&#x27;,&#x27;赵敏&#x27;);</span><br><span class="line">1.2 数学函数</span><br><span class="line">  1.2.1 round 四舍五入</span><br><span class="line">        select round(1.5);</span><br><span class="line">        select round(1.567,2);</span><br><span class="line">  1.2.2 ceil  向上取整，返回&gt;=该参数的最小整数</span><br><span class="line">        select ceil(1.1); </span><br><span class="line">  1.2.3 floor 向下取整， 返回&lt;=该参数的最大整数</span><br><span class="line">        select floor(1.9);</span><br><span class="line">  1.2.4 truncate 截断</span><br><span class="line">        select truncate(1.69999,2);</span><br><span class="line">  1.2.5 mod 取余   a-a/b*b</span><br><span class="line">        select mod(10,3);</span><br><span class="line">        select 10%3;</span><br><span class="line">1.3 日期函数</span><br><span class="line">   1.3.1 now 返回当前系统日期+时间</span><br><span class="line">   select now();</span><br><span class="line">   1.3.2 currdate 返回当前系统日期</span><br><span class="line">   select curdate();</span><br><span class="line">   1.3.3 获取指定的部分 ,年(year),月(month),天(day),小时(hour),分钟(minute),秒(second)</span><br><span class="line">   select year(now());</span><br><span class="line">   select month(&#x27;1999-09-09&#x27;);</span><br><span class="line">   1.3.4 str_to_date:将日期格式的字符转换成指定格式的日期</span><br><span class="line">   select str_to_date(&#x27;9-13-2004&#x27;,&#x27;%m-%d-%Y&#x27;)</span><br><span class="line">   1.3.5 date_format:将日期转化成字符串</span><br><span class="line">   select date_format(&#x27;2020-01-01&#x27;,&#x27;%Y年/%m月/%d日&#x27;);</span><br><span class="line">1.4 其他函数</span><br><span class="line">   1.4.1 select VERSION();</span><br><span class="line">   1.4.2 select database();</span><br><span class="line">   1.4.3 select user();</span><br><span class="line">1.5 流程控制函数</span><br><span class="line">   1.5.1.if 函数 类似于if else</span><br><span class="line">   select if(条件表达式,true 执行这个, false 执行这个)</span><br><span class="line">   select if(10&gt;5,&#x27;大于&#x27;,&#x27;小于&#x27;)</span><br><span class="line">   select if(english is null ,&#x27;我没考英语&#x27;,&#x27;我考了英语&#x27;) from student;</span><br><span class="line">   1.5.2 case 函数 类似于 switch case</span><br><span class="line">   case 要判断的字段或表达式</span><br><span class="line">   when 常量1 then 显示的值1</span><br><span class="line">   when 常量2 then 显示的值2</span><br><span class="line">   else 要显示的值n</span><br><span class="line">   end</span><br><span class="line">   案例 根据不同的地区，将数学分数乘以不同的系数(杭州 1.1 深圳 1.2 香港 1.3 其他不变)</span><br><span class="line">   select address,case address when &#x27;杭州&#x27; then math * 1.1  when &#x27;深圳&#x27; then math * 1.2 when &#x27;香港&#x27; then math * 1.3 else math end from student;</span><br><span class="line">2.分组函数(聚合函数)</span><br><span class="line">  做统计使用</span><br><span class="line">   2.1. count：计算个(行数)数</span><br><span class="line">	   1. 一般选择非空的列：主键</span><br><span class="line">	   2. count(*)</span><br><span class="line">       select count(math) from student;	</span><br><span class="line">   2.2 max：计算最大值</span><br><span class="line">        select max(math) from student;</span><br><span class="line">   2.3 min：计算最小值</span><br><span class="line">        select min(math) from student;</span><br><span class="line">   2.4. sum：计算和</span><br><span class="line">       select max(math) from student;</span><br><span class="line">   2.5. avg：计算平均值</span><br><span class="line">       select avg(math) from student;</span><br><span class="line">   2.6 参数支持哪些类型</span><br><span class="line">   sum(),avg() 数值型</span><br><span class="line">   min(),max(),count() 数值和字符都可以</span><br><span class="line">   </span><br><span class="line">   -- 注意：所有聚合函数的计算，排除null值。</span><br><span class="line">	-- 解决方案：</span><br><span class="line">		-- 1. 选择不包含非空的列进行计算</span><br><span class="line">		-- 2. IFNULL函数</span><br><span class="line">   2.7 可以和distinct 搭配使用</span><br><span class="line">   select sum(distinct math),sum(math) from student;</span><br><span class="line">   select count(distinct math),count(math) from student;</span><br><span class="line">   </span><br><span class="line">   2.8 和分组函数一同查询的字段有限制,一般来说是group by之后的字段</span><br><span class="line">   select sum(math),name from student; -- 没有意义</span><br></pre></td></tr></table></figure>
 
-<p><img src="/imgs%5Csnipaste_20210222_152326.png" alt="snipaste_20210222_152326"></p>
+<p><img src="/mysql%5Csnipaste_20210222_152326.png" alt="snipaste_20210222_152326"></p>
 <h2 id="6-6-分组查询"><a href="#6-6-分组查询" class="headerlink" title="6.6 分组查询"></a>6.6 分组查询</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">1.语法</span><br><span class="line">   select 分组函数,列(要求出现在group by 后面)</span><br><span class="line">   from 表</span><br><span class="line">   [where 筛选条件]</span><br><span class="line">   group by 分组列表</span><br><span class="line">   [having 筛选条件]</span><br><span class="line">   [order by 排序列表]</span><br><span class="line">2. 注意：</span><br><span class="line">	1. 分组之后查询的字段：分组字段、聚合函数</span><br><span class="line">	2. where 和 having 的区别？</span><br><span class="line">		1. where 在分组之前进行限定，如果不满足条件，则不参与分组。having在分组之后进行限定，如果不满足结果，则不会被查询出来</span><br><span class="line">		2. where 后不可以跟聚合函数，having可以进行聚合函数的判断。</span><br><span class="line">案例1:查询不同性别的数学最高分和英语最高分</span><br><span class="line">    select sex,max(math),max(english) from student group by sex;</span><br><span class="line">    </span><br><span class="line">案例2：统计不同地区的学生个数    </span><br><span class="line">	select address,count(*) from student group by address;</span><br><span class="line"></span><br><span class="line">案例3:统计来自香港的学生并按照性别求出数学平均分</span><br><span class="line">    select sex,avg(math) from student where address =&#x27;香港&#x27; group by sex; </span><br><span class="line">    </span><br><span class="line">案例4:统计不同地区，不同性别学生的数学平均分</span><br><span class="line">    select address,sex,avg(math) from student group by address,sex;</span><br><span class="line">    </span><br><span class="line">案例5:统计不同地区学生的数学平均分并要求平均分大于80</span><br><span class="line">   select address,avg(math) as math_avg from student group by address having math_avg &gt;80;</span><br><span class="line">   </span><br><span class="line">案例6：统计来自香港的学生按照性别求数学平均分，并要求平均分大于80</span><br><span class="line">   第一种 select  sex, avg(math) math_avg from student where address=&#x27;香港&#x27; group by sex having math_avg &gt;80;  </span><br><span class="line">   第二种 select address,sex, avg(math) math_avg  from student group by address,sex having math_avg &gt;80 and address=&#x27;香港&#x27;;</span><br><span class="line">   </span><br><span class="line">案例7：按学生姓名的长度分组，统计每一组学生个数（group by 后面可以接函数）</span><br><span class="line">   select length(name),count(*)  from student group by length(name);</span><br><span class="line">   </span><br><span class="line">案例8:统计不同地区，不同性别学生的数学平均分，并且要求按照数学平均分从大到小排序</span><br><span class="line">  select  address ,sex,avg(math) math_avg from student group by address,sex order by math_avg desc;</span><br></pre></td></tr></table></figure>
 
 <h2 id="6-7-分页查询"><a href="#6-7-分页查询" class="headerlink" title="6.7 分页查询"></a>6.7 分页查询</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">1. 语法：</span><br><span class="line">	select</span><br><span class="line">		字段列表</span><br><span class="line">	from</span><br><span class="line">		表名列表</span><br><span class="line">	[where</span><br><span class="line">		条件列表]s</span><br><span class="line">	[group by</span><br><span class="line">		分组字段]</span><br><span class="line">	[having</span><br><span class="line">		分组之后的条件]</span><br><span class="line">	[order by</span><br><span class="line">		排序]</span><br><span class="line">	limit</span><br><span class="line">		分页限定</span><br><span class="line">案例1:显示前3条学生信息		</span><br><span class="line">	SELECT * FROM student LIMIT 0,3; </span><br><span class="line">案例2:显示数学成绩前3的学生信息</span><br><span class="line">    select * from student order by math limit 0,3;</span><br><span class="line">2. 公式：开始的索引 = （当前的页码 - 1） * 每页显示的条数	</span><br><span class="line">3. limit 是一个MySQL&quot;方言&quot;</span><br></pre></td></tr></table></figure>
@@ -446,7 +446,7 @@
 
   <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">*</span> 子查询不同情况</span><br><span class="line"></span><br><span class="line">​```mysql</span><br><span class="line"><span class="number">1.</span> 子查询的结果是单行单列的：</span><br><span class="line">	子查询可以作为条件，使用运算符去判断。 运算符： <span class="operator">&gt;</span> <span class="operator">&gt;=</span> <span class="operator">&lt;</span> <span class="operator">&lt;=</span> <span class="operator">=</span></span><br><span class="line">	<span class="comment">-- 查询员工工资小于平均工资的人</span></span><br><span class="line">	<span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> emp.salary <span class="operator">&lt;</span> (<span class="keyword">SELECT</span> <span class="built_in">AVG</span>(salary) <span class="keyword">FROM</span> emp);</span><br><span class="line">	</span><br><span class="line"><span class="number">2.</span> 子查询的结果是多行单列的：</span><br><span class="line">	子查询可以作为条件，使用运算符<span class="keyword">in</span>来判断</span><br><span class="line">	<span class="comment">-- 查询&#x27;财务部&#x27;和&#x27;市场部&#x27;所有的员工信息</span></span><br><span class="line">	<span class="keyword">SELECT</span> id <span class="keyword">FROM</span> dept <span class="keyword">WHERE</span> NAME <span class="operator">=</span> <span class="string">&#x27;财务部&#x27;</span> <span class="keyword">OR</span> NAME <span class="operator">=</span> <span class="string">&#x27;市场部&#x27;</span>;</span><br><span class="line">	<span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> dept_id <span class="operator">=</span> <span class="number">3</span> <span class="keyword">OR</span> dept_id <span class="operator">=</span> <span class="number">2</span>;</span><br><span class="line">	<span class="comment">-- 子查询</span></span><br><span class="line">	<span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> dept_id <span class="keyword">IN</span> (<span class="keyword">SELECT</span> id <span class="keyword">FROM</span> dept <span class="keyword">WHERE</span> NAME <span class="operator">=</span> <span class="string">&#x27;财务部&#x27;</span> <span class="keyword">OR</span> NAME <span class="operator">=</span> <span class="string">&#x27;市场部&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span> 子查询的结果是多行多列的：</span><br><span class="line">	子查询可以作为一张虚拟表参与查询</span><br><span class="line">	<span class="comment">-- 查询员工入职日期是2011-11-11日之后的员工信息和部门信息</span></span><br><span class="line">	<span class="comment">-- 子查询</span></span><br><span class="line">	<span class="keyword">select</span>  t1.id,.t1.name,t1.join_date,d.name <span class="keyword">from</span> dept d <span class="keyword">join</span> (<span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> emp <span class="keyword">where</span> join_date <span class="operator">&lt;</span> <span class="string">&#x27;2011-11-11&#x27;</span>) t1 <span class="keyword">ON</span> d.id<span class="operator">=</span>t1.dept_id;</span><br><span class="line">				</span><br><span class="line">	<span class="comment">-- 普通内连接</span></span><br><span class="line">	<span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> emp t1,dept t2 <span class="keyword">WHERE</span> t1.`dept_id` <span class="operator">=</span> t2.`id` <span class="keyword">AND</span> t1.`join_date` <span class="operator">&gt;</span>  <span class="string">&#x27;2011-11-11&#x27;</span></span><br><span class="line">    <span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> emp e <span class="keyword">join</span> dept d <span class="keyword">on</span> e.dept_id <span class="operator">=</span> d.id <span class="keyword">where</span> e.join_date <span class="operator">&gt;</span> <span class="string">&#x27;2011-11-11&#x27;</span></span><br></pre></td></tr></table></figure></li>
 </ul>
-<h1 id=""><a href="#" class="headerlink" title=""></a></h1><h1 id="第八章-约束"><a href="#第八章-约束" class="headerlink" title="第八章 约束"></a>第八章 约束</h1><ul>
+<h1 id><a href="#" class="headerlink" title></a></h1><h1 id="第八章-约束"><a href="#第八章-约束" class="headerlink" title="第八章 约束"></a>第八章 约束</h1><ul>
 <li>约束：对表中的数据进行限定，保证数据的正确性、有效性和完整性。</li>
 <li>分类：<ul>
 <li>主键约束：primary key</li>
@@ -534,70 +534,70 @@
 <li><p>读未提交(出现脏读的情况)</p>
 <ul>
 <li><p>打开一个客户端A，并设置当前事务模式为read uncommitted（未提交读），查询表account的初始值</p>
-<p>  <img src="/imgs%5C11.png"></p>
+<p>  <img src="/mysql%5C11.png"></p>
 </li>
 <li><p>在客户端A的事务提交之前，打开另一个客户端B，更新表account</p>
-<p>  <img src="/imgs%5C12.png"></p>
+<p>  <img src="/mysql%5C12.png"></p>
 </li>
 <li><p>这时，虽然客户端B的事务还没提交，但是客户端A就可以查询到B已经更新的数据</p>
-<p>  <img src="/imgs%5C13.png"></p>
+<p>  <img src="/mysql%5C13.png"></p>
 </li>
 <li><p>一旦客户端B的事务因为某种原因回滚，所有的操作都将会被撤销，那客户端A查询到的数据其实就是脏数据</p>
-<p>  <img src="/imgs%5C14.png"></p>
+<p>  <img src="/mysql%5C14.png"></p>
 </li>
 <li><p>在客户端A执行更新语句update account set balance &#x3D; balance - 50 where id &#x3D;1，lilei的balance没有变成350，居然是400，是不是很奇怪，数据不一致啊，如果你这么想就太天真 了，在应用程序中，我们会用400-50&#x3D;350，并不知道其他会话回滚了，要想解决这个问题可以采用读已提交的隔离级别</p>
-<p>  <img src="/imgs%5C15.png"></p>
+<p>  <img src="/mysql%5C15.png"></p>
 </li>
 </ul>
 </li>
 <li><p>读已提交</p>
 <ul>
 <li><p>打开一个客户端A，并设置当前事务模式为read committed（读已提交），查询表account的所有记录</p>
-<p>  <img src="/imgs%5C21.png"></p>
+<p>  <img src="/mysql%5C21.png"></p>
 </li>
 <li><p>在客户端A的事务提交之前，打开另一个客户端B，更新表account</p>
-<p>  <img src="/imgs%5C22.png"></p>
+<p>  <img src="/mysql%5C22.png"></p>
 </li>
 <li><p>这时，客户端B的事务还没提交，客户端A不能查询到B已经更新的数据，解决了脏读问题</p>
-<p>  <img src="/imgs%5C23.png"></p>
+<p>  <img src="/mysql%5C23.png"></p>
 </li>
 <li><p>客户端B的事务提交</p>
-<p>  <img src="/imgs%5C24.png"></p>
+<p>  <img src="/mysql%5C24.png"></p>
 </li>
 <li><p>客户端A执行与上一步相同的查询，结果 与上一步不一致，即产生了不可重复读的问题</p>
-<p>  <img src="/imgs/25.png"></p>
+<p>  <img src="/mysql/25.png"></p>
 </li>
 </ul>
 </li>
 <li><p>可重复读</p>
 <ul>
 <li><p>打开一个客户端A，并设置当前事务模式为repeatable read，查询表account的所有记录</p>
-<p>  <img src="/imgs%5C31.png"></p>
+<p>  <img src="/mysql%5C31.png"></p>
 </li>
 <li><p>在客户端A的事务提交之前，打开另一个客户端B，更新表account并提交</p>
-<p>  <img src="/imgs%5C32.png"></p>
+<p>  <img src="/mysql%5C32.png"></p>
 </li>
 <li><p>在客户端A查询表account的所有记录，与步骤（1）查询结果一致，没有出现不可重复读的问题</p>
-<p>  <img src="/imgs%5C33.png"></p>
+<p>  <img src="/mysql%5C33.png"></p>
 </li>
 <li><p>在客户端A，接着执行update balance &#x3D; balance - 50 where id &#x3D; 1，balance没有变成400-50&#x3D;350，lilei的balance值用的是步骤（2）中的350来算的，所以是300，数据的一致性倒是没有被破坏。可重复读的隔离级别下使用了MVCC机制，select操作不会更新版本号，是快照读（历史版本）；insert、update和delete会更新版本号，是当前读（当前版本）。</p>
-<p>  <img src="/imgs%5C34.png"></p>
+<p>  <img src="/mysql%5C34.png"></p>
 </li>
 <li><p>重新打开客户端B，插入一条新数据后提交</p>
-<p>  <img src="/imgs%5C35.png"></p>
+<p>  <img src="/mysql%5C35.png"></p>
 </li>
 <li><p>在客户端A查询表account的所有记录，没有 查出 新增数据，所以出现幻读</p>
-<p>  <img src="/imgs%5C36.png"></p>
+<p>  <img src="/mysql%5C36.png"></p>
 </li>
 </ul>
 </li>
 <li><p>串行化</p>
 <ul>
 <li><p>打开一个客户端A，并设置当前事务模式为serializable，查询表account的初始值</p>
-<p>  <img src="/imgs%5C41.png"></p>
+<p>  <img src="/mysql%5C41.png"></p>
 </li>
 <li><p>打开一个客户端B，并设置当前事务模式为serializable，插入一条记录报错，表被锁了插入失败，mysql中事务隔离级别为serializable时会锁表，因此不会出现幻读的情况，这种隔离级别并发性极低，开发中很少会用到。</p>
-<p>  <img src="/imgs%5C42.png"></p>
+<p>  <img src="/mysql%5C42.png"></p>
 </li>
 </ul>
 </li>
@@ -653,10 +653,10 @@
 <li>一个数据库中可以有多个表，每个表都有一个名字，用来标识自己。表名具有唯一性。</li>
 <li>表具有一些特性，这些特性定义了数据在表中如何存储，类似java和python中 “类”的设计。</li>
 <li>表由列组成，我们也称为<strong>字段</strong>。每个字段描述了它所含有的数据的意义，<strong>数据表的设计实际上就是对字段的设计</strong>。创建数据表时，为每个字段分配一个数据类型，定义它们的数据长度和字段名。每个字段类似java 或者python中的“实例属性”。</li>
-<li>表中的数据是按行存储的，一行即为一条记录。每一行类似于java或python中的“对象”。<img src="/imgs/1554904472176.png" alt="1554904472176"></li>
+<li>表中的数据是按行存储的，一行即为一条记录。每一行类似于java或python中的“对象”。<img src="/mysql/1554904472176.png" alt="1554904472176"></li>
 </ul>
 <p>类似于生活的存储柜：</p>
-<p><img src="/imgs/1554947249964.png" alt="1554947249964"></p>
+<p><img src="/mysql/1554947249964.png" alt="1554947249964"></p>
 </li>
 </ul>
 
