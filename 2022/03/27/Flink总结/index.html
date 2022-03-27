@@ -6,17 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://shin8543.github.io">
-  <title>Archives: 2022/3 | Hexo</title>
+  <title>Hexo</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="website">
+  <meta name="description" content="Flink总结Flink 核心特点批流一体所有的数据都天然带有时间的概念，必然发生在某一个时间点。把事件按照时间顺序排列起来，就形成了一个事件流，也叫作数据流。「无界数据」是持续产生的数据，所以必须持续地处理无界数据流。「有界数据」，就是在一个确定的时间范围内的数据流，有开始有结束，一旦确定了就不会再改变。 可靠的容错能力 集群级容错  集群管理器集成（Hadoop YARN、Mesos或Kube">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://shin8543.github.io/archives/2022/03/index.html">
+<meta property="og:url" content="https://shin8543.github.io/2022/03/27/Flink%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Flink总结Flink 核心特点批流一体所有的数据都天然带有时间的概念，必然发生在某一个时间点。把事件按照时间顺序排列起来，就形成了一个事件流，也叫作数据流。「无界数据」是持续产生的数据，所以必须持续地处理无界数据流。「有界数据」，就是在一个确定的时间范围内的数据流，有开始有结束，一旦确定了就不会再改变。 可靠的容错能力 集群级容错  集群管理器集成（Hadoop YARN、Mesos或Kube">
 <meta property="og:locale">
+<meta property="og:image" content="https://shin8543.github.io/Flink%E6%80%BB%E7%BB%93%20ad258/Untitled.png">
+<meta property="article:published_time" content="2022-03-27T04:26:52.000Z">
+<meta property="article:modified_time" content="2022-03-27T12:28:50.146Z">
 <meta property="article:author" content="Shin">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://shin8543.github.io/Flink%E6%80%BB%E7%BB%93%20ad258/Untitled.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -229,70 +235,444 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Flink总结" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+  <div class="article-entry" itemprop="articleBody">
     
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/03/27/Flink%E6%80%BB%E7%BB%93/" class="archive-article-date">
-        <time datetime="2022-03-27T04:26:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-27</time>
-</a>
+    <h1 id="Flink总结"><a href="#Flink总结" class="headerlink" title="Flink总结"></a>Flink总结</h1><h3 id="Flink-核心特点"><a href="#Flink-核心特点" class="headerlink" title="Flink 核心特点"></a><strong>Flink 核心特点</strong></h3><h3 id="批流一体"><a href="#批流一体" class="headerlink" title="批流一体"></a><strong>批流一体</strong></h3><p>所有的数据都天然带有时间的概念，必然发生在某一个时间点。把事件按照时间顺序排列起来，就形成了一个事件流，也叫作数据流。<strong>「无界数据」</strong>是持续产生的数据，所以必须持续地处理无界数据流。<strong>「有界数据」</strong>，就是在一个确定的时间范围内的数据流，有开始有结束，一旦确定了就不会再改变。</p>
+<h3 id="可靠的容错能力"><a href="#可靠的容错能力" class="headerlink" title="可靠的容错能力"></a><strong>可靠的容错能力</strong></h3><ul>
+<li><p>集群级容错</p>
+<ul>
+<li>集群管理器集成（Hadoop YARN、Mesos或Kubernetes）</li>
+<li>高可用性设置（HA模式基于ApacheZooKeeper）</li>
+</ul>
+</li>
+<li><p>应用级容错（ Checkpoint）</p>
+<ul>
+<li>一致性（其本身支持Exactly-Once 语义）</li>
+<li>轻量级（检查点的执行异步和增量检查点）</li>
+</ul>
+</li>
+<li><p>高吞吐、低延迟</p>
+  <span id="more"></span></li>
+</ul>
+<p><strong><strong>运行时架构</strong></strong></p>
+<p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_png/2gY1hzDz7dTIxibEDof281h0icUabpR26LQEn41Z2GS02O6O7hHCibq5BXomrtdW1cS2VZA43BSfIaAAZoazia96Vw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">https://mmbiz.qpic.cn/mmbiz_png&#x2F;2gY1hzDz7dTIxibEDof281h0icUabpR26LQEn41Z2GS02O6O7hHCibq5BXomrtdW1cS2VZA43BSfIaAAZoazia96Vw&#x2F;640?wx_fmt&#x3D;png&amp;tp&#x3D;webp&amp;wxfrom&#x3D;5&amp;wx_lazy&#x3D;1&amp;wx_co&#x3D;1</a></p>
+<ul>
+<li>Flink 客户端<ul>
+<li>提交Flink作业到Flink集群</li>
+<li>Stream Graph 和 Job Graph构建</li>
+</ul>
+</li>
+<li>JobManager<ul>
+<li>资源申请</li>
+<li>任务调度</li>
+<li>应用容错</li>
+</ul>
+</li>
+<li>TaskManager<ul>
+<li>接收JobManager 分发的子任务，管理子任务</li>
+<li>任务处理（消费数据、处理数据）</li>
+</ul>
+</li>
+</ul>
+<h2 id="Flink-应用"><a href="#Flink-应用" class="headerlink" title="Flink 应用"></a><strong>Flink 应用</strong></h2><h3 id="数据流"><a href="#数据流" class="headerlink" title="数据流"></a><strong>数据流</strong></h3><h3 id="DataStream-体系"><a href="#DataStream-体系" class="headerlink" title="DataStream 体系"></a><strong>DataStream 体系</strong></h3><ol>
+<li>DataStream(每个DataStream都有一个Transformation对象)</li>
+<li>DataStreamSource（DataStream的起点）</li>
+<li>DataStreamSink（DataStream的输出）</li>
+<li>KeyedStream（表示根据指定的Key记性分组的数据流）</li>
+<li>WindowdeStream &amp; AllWindowedStream（根据key分组且基于WindowAssigner切分窗口的数据流）</li>
+<li>JoinedStreams &amp; CoGroupedStreams<ol>
+<li>JoinedStreams底层使用CoGroupedStreams来实现</li>
+<li>CoGrouped侧重的是Group，对数据进行分组，是对同一个key上的两组集合进行操作</li>
+<li>Join侧重的是数据对，对同一个key的每一对元素进行操作</li>
+</ol>
+</li>
+<li>ConnectedStreams（表示两个数据流的组合）</li>
+<li>BroadcastStream &amp; BroadcastConnectedStream（DataStream的广播行为）</li>
+<li>IterativeStream（包含IterativeStream的Dataflow是一个有向有环图）</li>
+<li>AsyncDataStream（在DataStream上使用异步函数的能力）</li>
+</ol>
+<h3 id="处理数据API"><a href="#处理数据API" class="headerlink" title="处理数据API"></a><strong>处理数据API</strong></h3><p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_png/2gY1hzDz7dTIxibEDof281h0icUabpR26LIMnTCqaiaSmTbrAwabCRU6xKRhRy6CVxoSzBFjzmpHgkZ3krNLPyLYQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">https://mmbiz.qpic.cn/mmbiz_png&#x2F;2gY1hzDz7dTIxibEDof281h0icUabpR26LIMnTCqaiaSmTbrAwabCRU6xKRhRy6CVxoSzBFjzmpHgkZ3krNLPyLYQ&#x2F;640?wx_fmt&#x3D;png&amp;tp&#x3D;webp&amp;wxfrom&#x3D;5&amp;wx_lazy&#x3D;1&amp;wx_co&#x3D;1</a></p>
+<p>处理数据API</p>
+<h2 id="核心抽象"><a href="#核心抽象" class="headerlink" title="核心抽象"></a><strong>核心抽象</strong></h2><h3 id="环境对象"><a href="#环境对象" class="headerlink" title="环境对象"></a><strong>环境对象</strong></h3><p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_png/2gY1hzDz7dTIxibEDof281h0icUabpR26L038j26g5tAyeTOeY18NdmAz7hibOHl8ibQPDViaDMAFLJvly9B86668Ag/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">https://mmbiz.qpic.cn/mmbiz_png&#x2F;2gY1hzDz7dTIxibEDof281h0icUabpR26L038j26g5tAyeTOeY18NdmAz7hibOHl8ibQPDViaDMAFLJvly9B86668Ag&#x2F;640?wx_fmt&#x3D;png&amp;tp&#x3D;webp&amp;wxfrom&#x3D;5&amp;wx_lazy&#x3D;1&amp;wx_co&#x3D;1</a></p>
+<h3 id="数据流元素"><a href="#数据流元素" class="headerlink" title="数据流元素"></a><strong>数据流元素</strong></h3><p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_png/2gY1hzDz7dTIxibEDof281h0icUabpR26LBFQ1PJShI7v90l7PCtvTgviabSdebOykwfzyiaTGEq6KARHp3f7CpYyA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">https://mmbiz.qpic.cn/mmbiz_png&#x2F;2gY1hzDz7dTIxibEDof281h0icUabpR26LBFQ1PJShI7v90l7PCtvTgviabSdebOykwfzyiaTGEq6KARHp3f7CpYyA&#x2F;640?wx_fmt&#x3D;png&amp;tp&#x3D;webp&amp;wxfrom&#x3D;5&amp;wx_lazy&#x3D;1&amp;wx_co&#x3D;1</a></p>
+<ol>
+<li>StreamRecord（数据流中的一条记录｜事件）<ol>
+<li>数据的值本身</li>
+<li>时间戳（可选）</li>
+</ol>
+</li>
+<li>LatencyMarker（用来近似评估延迟）<ol>
+<li>周期性的在数据源算子中创造出来的时间戳</li>
+<li>算子编号</li>
+<li>数据源所在的Task编号</li>
+</ol>
+</li>
+<li>Watemark（是一个时间戳，用来告诉算子所有时间早于等于Watermark的事件或记录都已经到达，不会再有比Watermark更早的记录，算子可以根据Watermark触发窗口的计算、清理资源等）</li>
+<li>StreamStatus（用来通知Task是否会继续接收到上游的记录或者Watermark）<ol>
+<li>空闲状态（IDLE）。</li>
+<li>活动状态（ACTIVE）。</li>
+</ol>
+</li>
+</ol>
+<h3 id="Flink-异步IO"><a href="#Flink-异步IO" class="headerlink" title="Flink 异步IO"></a><strong>Flink 异步IO</strong></h3><h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a><strong>原理</strong></h3><p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_png/2gY1hzDz7dTIxibEDof281h0icUabpR26LlwicEq338A0YXNcOvx7ibnU7J04FOUibice7OG2x7vDXt73WSKvDhSMHcQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">https://mmbiz.qpic.cn/mmbiz_png&#x2F;2gY1hzDz7dTIxibEDof281h0icUabpR26LlwicEq338A0YXNcOvx7ibnU7J04FOUibice7OG2x7vDXt73WSKvDhSMHcQ&#x2F;640?wx_fmt&#x3D;png&amp;tp&#x3D;webp&amp;wxfrom&#x3D;5&amp;wx_lazy&#x3D;1&amp;wx_co&#x3D;1</a></p>
+<p>顺序输出模式（先收到的数据元素先输出，后续数据元素的异步函数调用无论是否先完成，都需要等待）</p>
+<p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_png/2gY1hzDz7dTIxibEDof281h0icUabpR26LKYSMNI0t0ibsvYKrsFJZc5mvkdMEgPUb5tn2zjJvng4tnhHPYJamnKw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">https://mmbiz.qpic.cn/mmbiz_png&#x2F;2gY1hzDz7dTIxibEDof281h0icUabpR26LKYSMNI0t0ibsvYKrsFJZc5mvkdMEgPUb5tn2zjJvng4tnhHPYJamnKw&#x2F;640?wx_fmt&#x3D;png&amp;tp&#x3D;webp&amp;wxfrom&#x3D;5&amp;wx_lazy&#x3D;1&amp;wx_co&#x3D;1</a></p>
+<p>无序输出模式（先处理完的数据元素先输出，不保证消息顺序）</p>
+<p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_png/2gY1hzDz7dTIxibEDof281h0icUabpR26LPB81fHJTfLz3YkvJyYpmR2bTvg7BsDZJm01HBQqMs4aUica6hIXkeXA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">https://mmbiz.qpic.cn/mmbiz_png&#x2F;2gY1hzDz7dTIxibEDof281h0icUabpR26LPB81fHJTfLz3YkvJyYpmR2bTvg7BsDZJm01HBQqMs4aUica6hIXkeXA&#x2F;640?wx_fmt&#x3D;png&amp;tp&#x3D;webp&amp;wxfrom&#x3D;5&amp;wx_lazy&#x3D;1&amp;wx_co&#x3D;1</a></p>
+<h3 id="数据分区"><a href="#数据分区" class="headerlink" title="数据分区"></a><strong>数据分区</strong></h3><ul>
+<li>ForwardPartitioner（用于在同一个OperatorChain中上下游算子之间的数据转发，实际上数据是直接传递给下游的）</li>
+<li>ShufflePartitioner（随机将元素进行分区，可以确保下游的Task能够均匀地获得数据）</li>
+<li>ReblancePartitioner（以Round-robin的方式为每个元素分配分区，确保下游的Task可以均匀地获得数据，避免数据倾斜）</li>
+<li>RescalingPartitioner（用Round-robin选择下游的一个Task进行数据分区，如上游有2个Source，下游有6个Map，那么每个Source会分配3个固定的下游Map，不会向未分配给自己的分区写入数据）</li>
+<li>BroadcastPartitioner（将该记录广播给所有分区）</li>
+<li>KeyGroupStreamPartitioner（KeyedStream根据KeyGroup索引编号进行分区，该分区器不是提供给用户来用的）</li>
+</ul>
+<h2 id="窗口"><a href="#窗口" class="headerlink" title="窗口"></a><strong>窗口</strong></h2><h3 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a><strong>实现原理</strong></h3><p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_png/2gY1hzDz7dTIxibEDof281h0icUabpR26LWSPibcS2UTAoI5KdkFShmxBGiaZMHpITwEoqeSOjctmP2K0ep3XO7hkA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">https://mmbiz.qpic.cn/mmbiz_png&#x2F;2gY1hzDz7dTIxibEDof281h0icUabpR26LWSPibcS2UTAoI5KdkFShmxBGiaZMHpITwEoqeSOjctmP2K0ep3XO7hkA&#x2F;640?wx_fmt&#x3D;png&amp;tp&#x3D;webp&amp;wxfrom&#x3D;5&amp;wx_lazy&#x3D;1&amp;wx_co&#x3D;1</a></p>
+<ul>
+<li>WindowAssigner（用来决定某个元素被分配到哪个&#x2F;哪些窗口中去）</li>
+<li>WindowTrigger（决定一个窗口何时能够被计算或清除，每一个窗口都拥有一个属于自己的Trigger）</li>
+<li>WindowEvictor（窗口数据的过滤器，可在Window Function 执行前或后，从Window中过滤元素）<ul>
+<li>CountEvictor：计数过滤器。在Window中保留指定数量的元素，并从窗口头部开始丢弃其余元素</li>
+<li>DeltaEvictor：阈值过滤器。丢弃超过阈值的数据记录</li>
+<li>TimeEvictor：时间过滤器。保留最新一段时间内的元素</li>
+</ul>
+</li>
+</ul>
+<h3 id="Watermark-（水印）"><a href="#Watermark-（水印）" class="headerlink" title="Watermark （水印）"></a><strong>Watermark （水印）</strong></h3><h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a><strong>作用</strong></h3><p>用于处理乱序事件，而正确地处理乱序事件，通常用Watermark机制结合窗口来实现</p>
+<h3 id="DataStream-Watermark-生成"><a href="#DataStream-Watermark-生成" class="headerlink" title="DataStream Watermark 生成"></a><strong>DataStream Watermark 生成</strong></h3><ol>
+<li>Source Function 中生成Watermark</li>
+<li>DataStream API 中生成Watermark<ol>
+<li>AssingerWithPeriodicWatermarks （周期性的生成Watermark策略，不会针对每个事件都生成）</li>
+<li>AssingerWithPunctuatedWatermarks （对每个事件都尝试进行Watermark的生成，如果生成的结果是null 或Watermark小于之前的，则不会发往下游）</li>
+</ol>
+</li>
+</ol>
+<h2 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a><strong>内存管理</strong></h2><h3 id="自主内存管理"><a href="#自主内存管理" class="headerlink" title="自主内存管理"></a><strong>自主内存管理</strong></h3><h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a><strong>原因</strong></h3><ol>
+<li>JVM内存管理的不足<ol>
+<li>有效数据密度低</li>
+<li>垃圾回收（大数据场景下需要消耗大量的内存，更容易触发Full GC ）</li>
+<li>OOM 问题影响稳定性</li>
+<li>缓存未命中问题（Java对象在堆上存储时并不是连续的）</li>
+</ol>
+</li>
+<li>自主内存管理<ol>
+<li>堆上内存的使用、监控、调试简单，堆外内存出现问题后的诊断则较为复杂</li>
+<li>Flink有时需要分配短生命周期的MemorySegment，在堆外内存上分配比在堆上内存开销更高。</li>
+<li>在Flink的测试中，部分操作在堆外内存上会比堆上内存慢</li>
+<li>大内存（上百GB）JVM的启动需要很长时间，Full GC可以达到分钟级。使用堆外内存，可以将大量的数据保存在堆外，极大地减小堆内存，避免GC和内存溢出的问题。</li>
+<li>高效的IO操作。堆外内存在写磁盘或网络传输时是zero-copy，而堆上内存则至少需要1次内存复制。</li>
+<li>堆外内存是进程间共享的。也就是说，即使JVM进程崩溃也不会丢失数据。这可以用来做故障恢复（Flink暂时没有利用这项功能，不过未来很可能会去做）</li>
+<li>堆外内存的优势</li>
+<li>堆外内存的不足</li>
+</ol>
+</li>
+</ol>
+<h3 id="内存模型"><a href="#内存模型" class="headerlink" title="内存模型"></a><strong>内存模型</strong></h3><h3 id="内存模型图"><a href="#内存模型图" class="headerlink" title="内存模型图"></a><strong>内存模型图</strong></h3><p><img src="/Flink%E6%80%BB%E7%BB%93%20ad258/Untitled.png" alt="Flink%E6%80%BB%E7%BB%93%20ad258/Untitled.png"></p>
+<p><a href="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==">data:image&#x2F;gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg&#x3D;&#x3D;</a></p>
+<h3 id="MemorySegment（内存段）"><a href="#MemorySegment（内存段）" class="headerlink" title="MemorySegment（内存段）"></a><strong>MemorySegment（内存段）</strong></h3><p>一个MemorySegment对应着一个32KB大小的内存块。这块内存既可以是堆上内存（Java的byte数组），也可以是堆外内存（基于Netty的DirectByteBuffer）</p>
+<h3 id="图解"><a href="#图解" class="headerlink" title="图解"></a><strong>图解</strong></h3><p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_png/2gY1hzDz7dTIxibEDof281h0icUabpR26Lvhm7oviaADm2fJVNxfuGHoMnPt6wzWvct0gX1CwY2pgdcB7Dh9ACnBw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">https://mmbiz.qpic.cn/mmbiz_png&#x2F;2gY1hzDz7dTIxibEDof281h0icUabpR26Lvhm7oviaADm2fJVNxfuGHoMnPt6wzWvct0gX1CwY2pgdcB7Dh9ACnBw&#x2F;640?wx_fmt&#x3D;png&amp;tp&#x3D;webp&amp;wxfrom&#x3D;5&amp;wx_lazy&#x3D;1&amp;wx_co&#x3D;1</a></p>
+<h3 id="结构"><a href="#结构" class="headerlink" title="结构"></a><strong>结构</strong></h3><ul>
+<li>BYTE_ARRAY_BASE_OFFSET（二进制字节数组的起始索引）</li>
+<li>LITTLE_ENDIAN（判断是否为Little Endian模式的字节存储顺序，若不是，就是Big Endian模式）<ul>
+<li>Big Endian：低地址存放最高有效字节（MSB）</li>
+<li>Little Endian：低地址存放最低有效字节（LSB）X86机器</li>
+</ul>
+</li>
+<li>HeapMemory（如果MemeorySegment使用堆上内存，则表示一个堆上的字节数组（byte［］），如果MemorySegment使用堆外内存，则为null）</li>
+<li>address（字节数组对应的相对地址）</li>
+<li>addressLimit（标识地址结束位置）</li>
+<li>size（内存段的字节数）</li>
+</ul>
+<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a><strong>实现</strong></h3><ul>
+<li>HybirdMemorySegment：用来分配堆上和堆外内存和堆上内存，Flink 在实际使用中只使用了改方式。原因是当有多个实现时，JIT无法直接在编译时自动识别优化</li>
+<li>HeapMemorySegment：用来分配堆上内存，实际没有实现</li>
+</ul>
+<h3 id="MemroyManager（内存管理器）"><a href="#MemroyManager（内存管理器）" class="headerlink" title="MemroyManager（内存管理器）"></a><strong>MemroyManager（内存管理器）</strong></h3><p>实际申请的是堆外内存，通过RocksDB的Block Cache和WriterBufferManager参数来限制，RocksDB使用的内存量</p>
+<h2 id="State（状态）"><a href="#State（状态）" class="headerlink" title="State（状态）"></a><strong>State（状态）</strong></h2><p>状态管理需要考虑的因素：</p>
+<ol>
+<li>状态数据的存储和访问</li>
+<li>状态数据的备份和恢复</li>
+<li>状态数据的划分和动态扩容</li>
+<li>状态数据的清理</li>
+</ol>
+<h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a><strong>分类</strong></h3><p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_png/2gY1hzDz7dTIxibEDof281h0icUabpR26LB4ib6ZWEQCfeicWNqEAg0EEuBnFsMTXYIWDMHHKEAjJAViaanKpyUbLHg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">https://mmbiz.qpic.cn/mmbiz_png&#x2F;2gY1hzDz7dTIxibEDof281h0icUabpR26LB4ib6ZWEQCfeicWNqEAg0EEuBnFsMTXYIWDMHHKEAjJAViaanKpyUbLHg&#x2F;640?wx_fmt&#x3D;png&amp;tp&#x3D;webp&amp;wxfrom&#x3D;5&amp;wx_lazy&#x3D;1&amp;wx_co&#x3D;1</a></p>
+<h3 id="状态存储"><a href="#状态存储" class="headerlink" title="状态存储"></a><strong>状态存储</strong></h3><ul>
+<li>MemoryStateBackend：纯内存，适用于验证、测试，不推荐生产环境</li>
+<li>FsStateBackend：内存+文件，适用于长周期大规模的数据</li>
+<li>RocksDBStateBackend：RocksDB，适用于长周期大规模的数据</li>
+</ul>
+<h3 id="重分布"><a href="#重分布" class="headerlink" title="重分布"></a><strong>重分布</strong></h3><ul>
+<li>ListState：并行度在改变的时候，会将并发上的每个List都取出，然后把这些List合并到一个新的List,根据元素的个数均匀分配给新的Task</li>
+<li>UnionListState:把划分的方式交给用户去做，当改变并发的时候，会将原来的List拼接起来，然后不做划分，直接交给用户</li>
+<li>BroadcastState:变并发的时候，把这些数据分发到新的Task即可</li>
+<li>KeyState：Key-Group数量取决于最大并行度（MaxParallism）</li>
+</ul>
+<h2 id="作业提交"><a href="#作业提交" class="headerlink" title="作业提交"></a><strong>作业提交</strong></h2><p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_png/2gY1hzDz7dTIxibEDof281h0icUabpR26LMacAsdC92FR7PgPEwInorbEiaa1qSZQMsiaPjM782zXhDC54h4yqwgzg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">https://mmbiz.qpic.cn/mmbiz_png&#x2F;2gY1hzDz7dTIxibEDof281h0icUabpR26LMacAsdC92FR7PgPEwInorbEiaa1qSZQMsiaPjM782zXhDC54h4yqwgzg&#x2F;640?wx_fmt&#x3D;png&amp;tp&#x3D;webp&amp;wxfrom&#x3D;5&amp;wx_lazy&#x3D;1&amp;wx_co&#x3D;1</a></p>
+<h2 id="资源管理"><a href="#资源管理" class="headerlink" title="资源管理"></a><strong>资源管理</strong></h2><h3 id="关系图"><a href="#关系图" class="headerlink" title="关系图"></a><strong>关系图</strong></h3><p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_png/2gY1hzDz7dTIxibEDof281h0icUabpR26LxPKtq81wrJkMuDp2cngPo251B5r4WdRB2lIibFKAOXyQjPHxibloaDAA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">https://mmbiz.qpic.cn/mmbiz_png&#x2F;2gY1hzDz7dTIxibEDof281h0icUabpR26LxPKtq81wrJkMuDp2cngPo251B5r4WdRB2lIibFKAOXyQjPHxibloaDAA&#x2F;640?wx_fmt&#x3D;png&amp;tp&#x3D;webp&amp;wxfrom&#x3D;5&amp;wx_lazy&#x3D;1&amp;wx_co&#x3D;1</a></p>
+<h3 id="Slot选择策略"><a href="#Slot选择策略" class="headerlink" title="Slot选择策略"></a><strong>Slot选择策略</strong></h3><ul>
+<li>LocationPreferenceSlotSelectionStrategy（位置优先的选择策略）<ul>
+<li>DefaultLocationPreferenceSlotSelectionStrategy（默认策略），该策略不考虑资源的均衡分配，会从满足条件的可用Slot集合选择第1个</li>
+<li>EvenlySpreadOutLocationPreferenceSlotSelectionStrategy（均衡策略），该策略考虑资源的均衡分配，会从满足条件的可用Slot集合中选择剩余资源最多的Slot，尽量让各个TaskManager均衡地承担计算压力</li>
+</ul>
+</li>
+<li>PreviousAllocationSlotSelectionStrategy（已分配Slot优先的选择策略），如果当前没有空闲的已分配Slot，则仍然会使用位置优先的策略来分配和申请Slot</li>
+</ul>
+<h2 id="调度"><a href="#调度" class="headerlink" title="调度"></a><strong>调度</strong></h2><ul>
+<li>SchedulerNG （调度器）<ul>
+<li>作用</li>
+<li>实现</li>
+</ul>
+<ol>
+<li>DefaultScheduler（使用ScchedulerStrategy来实现）</li>
+<li>LegacyScheduler（实际使用了原来的ExecutionGraph的调度逻辑）</li>
+<li>作业的生命周期管理（开始调度、挂起、取消）</li>
+<li>作业执行资源的申请、分配、释放</li>
+<li>作业状态的管理（发布过程中的状态变化、作业异常时的FailOver</li>
+<li>作业的信息提供，对外提供作业的详细信息</li>
+</ol>
+</li>
+<li>SchedulingStrategy（调度策略）<ul>
+<li>实现</li>
+</ul>
+<ol>
+<li>EagerSchelingStrategy（该调度策略用来执行流计算作业的调度）</li>
+<li>LazyFromSourceSchedulingStrategy（该调度策略用来执行批处理作业的调度）</li>
+<li>startScheduling：调度入口，触发调度器的调度行为</li>
+<li>restartTasks：重启执行失败的Task，一般是Task执行异常导致的</li>
+<li>onExecutionStateChange：当Execution的状态发生改变时</li>
+<li>onPartitionConsumable：当IntermediateResultParitititon中的数据可以消费时</li>
+</ol>
+</li>
+<li>ScheduleMode（调度模式）<ol>
+<li>Eager调度（该模式适用于流计算。一次性申请需要所有的资源，如果资源不足，则作业启动失败。）</li>
+<li>Lazy_From_Sources分阶段调度（适用于批处理。从Source Task开始分阶段调度，申请资源的时候，一次性申请本阶段所需要的所有资源。上游Task执行完毕后开始调度执行下游的Task，读取上游的数据，执行本阶段的计算任务，执行完毕之后，调度后一个阶段的Task，依次进行调度，直到作业执行完成）</li>
+<li>Lazy_From_Sources_With_Batch_Slot_Request分阶段Slot重用调度（适用于批处理。与分阶段调度基本一样，区别在于该模式下使用批处理资源申请模式，可以在资源不足的情况下执行作业，但是需要确保在本阶段的作业执行中没有Shuffle行为）</li>
+</ol>
+</li>
+</ul>
+<h3 id="关键组件"><a href="#关键组件" class="headerlink" title="关键组件"></a><strong>关键组件</strong></h3><h3 id="JobMaster"><a href="#JobMaster" class="headerlink" title="JobMaster"></a><strong>JobMaster</strong></h3><ol>
+<li>调度执行和管理（将JobGraph转化为ExecutionGraph，调度Task的执行，并处理Task的异常）<ul>
+<li>InputSplit 分配</li>
+<li>结果分区跟踪</li>
+<li>作业执行异常</li>
+</ul>
+</li>
+<li>作业Slot资源管理</li>
+<li>检查点与保存点</li>
+<li>监控运维相关</li>
+<li>心跳管理</li>
+</ol>
+<h3 id="Task"><a href="#Task" class="headerlink" title="Task"></a><strong>Task</strong></h3><p>结构</p>
+<p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_png/2gY1hzDz7dTIxibEDof281h0icUabpR26LdcrpItwLZd9K0wmrfnewMN6eIJkr3LNVgry2xkf9XtDQqh0OBibTUzw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">https://mmbiz.qpic.cn/mmbiz_png&#x2F;2gY1hzDz7dTIxibEDof281h0icUabpR26LdcrpItwLZd9K0wmrfnewMN6eIJkr3LNVgry2xkf9XtDQqh0OBibTUzw&#x2F;640?wx_fmt&#x3D;png&amp;tp&#x3D;webp&amp;wxfrom&#x3D;5&amp;wx_lazy&#x3D;1&amp;wx_co&#x3D;1</a></p>
+<h3 id="作业调度失败"><a href="#作业调度失败" class="headerlink" title="作业调度失败"></a><strong>作业调度失败</strong></h3><h3 id="失败异常分类"><a href="#失败异常分类" class="headerlink" title="失败异常分类"></a><strong>失败异常分类</strong></h3><ul>
+<li>NonRecoverableError：不可恢复的错误。此类错误意味着即便是重启也无法恢复作业到正常状态，一旦发生此类错误，则作业执行失败，直接退出作业执行</li>
+<li>PartitionDataMissingError：分区数据不可访问错误。下游Task无法读取上游Task产生的数据，需要重启上游的Task</li>
+<li>EnvironmentError：环境的错误。这种错误需要在调度策略上进行改进，如使用黑名单机制，排除有问题的机器、服务，避免将失败的Task重新调度到这些机器上。</li>
+<li>RecoverableError：可恢复的错误</li>
+</ul>
+<h2 id="容错"><a href="#容错" class="headerlink" title="容错"></a><strong>容错</strong></h2><h3 id="容错保证语义"><a href="#容错保证语义" class="headerlink" title="容错保证语义"></a><strong>容错保证语义</strong></h3><ul>
+<li>At-Most-Once（最多一次）</li>
+<li>At-Leat-Once（最少一次）</li>
+<li>Exactly-Once（引擎内严格一次）</li>
+<li>End-to-End Exaacly-Once （端到端严格一次）</li>
+</ul>
+<h3 id="保存点恢复"><a href="#保存点恢复" class="headerlink" title="保存点恢复"></a><strong>保存点恢复</strong></h3><ol>
+<li>算子顺序的改变，如果对应的UID没变，则可以恢复，如果对应的UID变了则恢复失败。</li>
+<li>作业中添加了新的算子，如果是无状态算子，没有影响，可以正常恢复，如果是有状态的算子，跟无状态的算子一样处理。</li>
+<li>从作业中删除了一个有状态的算子，默认需要恢复保存点中所记录的所有算子的状态，如果删除了一个有状态的算子，从保存点恢复的时候被删除的OperatorID找不到，所以会报错，可以通过在命令中添加-allowNonRestoredState （short: -n）跳过无法恢复的算子。</li>
+<li>添加和删除无状态的算子，如果手动设置了UID，则可以恢复，保存点中不记录无状态的算子，如果是自动分配的UID，那么有状态算子的UID可能会变（Flink使用一个单调递增的计数器生成UID，DAG改版，计数器极有可能会变），很有可能恢复失败。</li>
+<li>恢复的时候调整并行度，Flink1.2.0及以上版本,如果没有使用作废的API，则没问题；1.2.0以下版本需要首先升级到1.2.0才可以。</li>
+</ol>
+<h3 id="端到端严格一次"><a href="#端到端严格一次" class="headerlink" title="端到端严格一次"></a><strong>端到端严格一次</strong></h3><h3 id="前提条件"><a href="#前提条件" class="headerlink" title="前提条件"></a><strong>前提条件</strong></h3><ul>
+<li>数据源支持断点读取</li>
+<li>外部存储支持回滚机制或者满足幂等性</li>
+</ul>
+<h3 id="图解-1"><a href="#图解-1" class="headerlink" title="图解"></a><strong>图解</strong></h3><p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_png/2gY1hzDz7dTIxibEDof281h0icUabpR26LRp7O1DO4k7bkNnza4W6icV8FjleMoia9EVvqw99ibrAuQCYGd12TFnGIg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">https://mmbiz.qpic.cn/mmbiz_png&#x2F;2gY1hzDz7dTIxibEDof281h0icUabpR26LRp7O1DO4k7bkNnza4W6icV8FjleMoia9EVvqw99ibrAuQCYGd12TFnGIg&#x2F;640?wx_fmt&#x3D;png&amp;tp&#x3D;webp&amp;wxfrom&#x3D;5&amp;wx_lazy&#x3D;1&amp;wx_co&#x3D;1</a></p>
+<h3 id="实现-1"><a href="#实现-1" class="headerlink" title="实现"></a><strong>实现</strong></h3><p>TwoPhaseCommitSinkFunction</p>
+<ol>
+<li>beginTransaction，开启一个事务，在临时目录中创建一个临时文件，之后写入数据到该文件中。此过程为不同的事务创建隔离，避免数据混淆。</li>
+<li>preCommit。预提交阶段。将缓存数据块写出到创建的临时文件，然后关闭该文件，确保不再写入新数据到该文件，同时开启一个新事务，执行属于下一个检查点的写入操作。</li>
+<li>commit。在提交阶段，以原子操作的方式将上一阶段的文件写入真正的文件目录下。如果提交失败，Flink应用会重启，并调用TwoPhaseCommitSinkFunction#recoverAndCommit方法尝试恢复并重新提交事务。</li>
+<li>abort。一旦终止事务，删除临时文件。</li>
+</ol>
+<h2 id="Flink-SQL"><a href="#Flink-SQL" class="headerlink" title="Flink SQL"></a><strong>Flink SQL</strong></h2><h3 id="关系图-1"><a href="#关系图-1" class="headerlink" title="关系图"></a><strong>关系图</strong></h3><p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_png/2gY1hzDz7dTIxibEDof281h0icUabpR26LYZvzDVB6tRWDtUavgrjNgLPPW4YSib3uWC4PYicvI3PRz1DMh2hQO3kw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">https://mmbiz.qpic.cn/mmbiz_png&#x2F;2gY1hzDz7dTIxibEDof281h0icUabpR26LYZvzDVB6tRWDtUavgrjNgLPPW4YSib3uWC4PYicvI3PRz1DMh2hQO3kw&#x2F;640?wx_fmt&#x3D;png&amp;tp&#x3D;webp&amp;wxfrom&#x3D;5&amp;wx_lazy&#x3D;1&amp;wx_co&#x3D;1</a></p>
+<h2 id="FLINK-API"><a href="#FLINK-API" class="headerlink" title="FLINK API"></a><strong>FLINK API</strong></h2><h3 id="DataStrem-JOIN"><a href="#DataStrem-JOIN" class="headerlink" title="DataStrem JOIN"></a><strong>DataStrem JOIN</strong></h3><p><strong>Window JOIN</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">stream.join(otherStream)</span><br><span class="line">    .where(&lt;KeySelector&gt;)</span><br><span class="line">    .equalTo(&lt;KeySelector&gt;)</span><br><span class="line">    .window(&lt;WindowAssigner&gt;)</span><br><span class="line">    .apply(&lt;JoinFunction&gt;)</span><br></pre></td></tr></table></figure>
 
-        </div>
-    	 
+<p>Tumbling Window Join</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">DataStream&lt;Integer&gt; orangeStream = ...</span><br><span class="line">DataStream&lt;Integer&gt; greenStream = ...</span><br><span class="line"></span><br><span class="line">orangeStream.join(greenStream)</span><br><span class="line">    .where(&lt;KeySelector&gt;)</span><br><span class="line">    .equalTo(&lt;KeySelector&gt;)</span><br><span class="line">    .window(TumblingEventTimeWindows.of(Time.milliseconds(<span class="number">2</span>)))</span><br><span class="line">    .apply (<span class="keyword">new</span> <span class="title class_">JoinFunction</span>&lt;Integer, Integer, String&gt; ()&#123;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="keyword">public</span> String <span class="title function_">join</span><span class="params">(Integer first, Integer second)</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> first + <span class="string">&quot;,&quot;</span> + second;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
+<p>Sliding Window Join</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">DataStream&lt;Integer&gt; orangeStream = ...</span><br><span class="line">DataStream&lt;Integer&gt; greenStream = ...</span><br><span class="line"></span><br><span class="line">orangeStream.join(greenStream)</span><br><span class="line">    .where(&lt;KeySelector&gt;)</span><br><span class="line">    .equalTo(&lt;KeySelector&gt;)</span><br><span class="line">    .window(SlidingEventTimeWindows.of(Time.milliseconds(<span class="number">2</span>) <span class="comment">/* size */</span>, Time.milliseconds(<span class="number">1</span>) <span class="comment">/* slide */</span>))</span><br><span class="line">    .apply (<span class="keyword">new</span> <span class="title class_">JoinFunction</span>&lt;Integer, Integer, String&gt; ()&#123;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="keyword">public</span> String <span class="title function_">join</span><span class="params">(Integer first, Integer second)</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> first + <span class="string">&quot;,&quot;</span> + second;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
+
+<p>Session Window Join</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">DataStream&lt;Integer&gt; orangeStream = ...</span><br><span class="line">DataStream&lt;Integer&gt; greenStream = ...</span><br><span class="line"></span><br><span class="line">orangeStream.join(greenStream)</span><br><span class="line">    .where(&lt;KeySelector&gt;)</span><br><span class="line">    .equalTo(&lt;KeySelector&gt;)</span><br><span class="line">    .window(EventTimeSessionWindows.withGap(Time.milliseconds(<span class="number">1</span>)))</span><br><span class="line">    .apply (<span class="keyword">new</span> <span class="title class_">JoinFunction</span>&lt;Integer, Integer, String&gt; ()&#123;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="keyword">public</span> String <span class="title function_">join</span><span class="params">(Integer first, Integer second)</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> first + <span class="string">&quot;,&quot;</span> + second;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
+    
+
+    
+    <div class="page-reward">
+      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/alipay.jpg">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/weixin.png">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
+        </div>
+      </a>
+    </div>
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          Shin
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="https://shin8543.github.io/2022/03/27/Flink总结/" title="" target="_blank">https://shin8543.github.io/2022/03/27/Flink总结/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
           
-          
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
+    
 
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://shin8543.github.io/2022/03/27/Flink%E6%80%BB%E7%BB%93/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/03/27/MyBatis/" class="archive-article-date">
-        <time datetime="2022-03-27T02:38:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-27</time>
-</a>
 
+
+<nav id="article-nav">
+  
+  
+    <a href="/2022/03/27/MyBatis/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
+
+
+
+
+
+
+
+
+
 
 
           </div>
@@ -333,8 +713,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,

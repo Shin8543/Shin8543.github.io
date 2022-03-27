@@ -236,6 +236,73 @@
             
 
   
+    <article id="post-Flink总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="Flink总结"><a href="#Flink总结" class="headerlink" title="Flink总结"></a>Flink总结</h1><h3 id="Flink-核心特点"><a href="#Flink-核心特点" class="headerlink" title="Flink 核心特点"></a><strong>Flink 核心特点</strong></h3><h3 id="批流一体"><a href="#批流一体" class="headerlink" title="批流一体"></a><strong>批流一体</strong></h3><p>所有的数据都天然带有时间的概念，必然发生在某一个时间点。把事件按照时间顺序排列起来，就形成了一个事件流，也叫作数据流。<strong>「无界数据」</strong>是持续产生的数据，所以必须持续地处理无界数据流。<strong>「有界数据」</strong>，就是在一个确定的时间范围内的数据流，有开始有结束，一旦确定了就不会再改变。</p>
+<h3 id="可靠的容错能力"><a href="#可靠的容错能力" class="headerlink" title="可靠的容错能力"></a><strong>可靠的容错能力</strong></h3><ul>
+<li><p>集群级容错</p>
+<ul>
+<li>集群管理器集成（Hadoop YARN、Mesos或Kubernetes）</li>
+<li>高可用性设置（HA模式基于ApacheZooKeeper）</li>
+</ul>
+</li>
+<li><p>应用级容错（ Checkpoint）</p>
+<ul>
+<li>一致性（其本身支持Exactly-Once 语义）</li>
+<li>轻量级（检查点的执行异步和增量检查点）</li>
+</ul>
+</li>
+<li><p>高吞吐、低延迟</p></li></ul>
+    
+    <a class="article-more-a" href="/2022/03/27/Flink%E6%80%BB%E7%BB%93/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2022/03/27/Flink%E6%80%BB%E7%BB%93/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-MyBatis" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
