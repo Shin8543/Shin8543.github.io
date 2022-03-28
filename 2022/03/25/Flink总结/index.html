@@ -17,12 +17,27 @@
 <meta property="og:site_name" content="BLOG - Shin">
 <meta property="og:description" content="Flink总结Flink 核心特点批流一体所有的数据都天然带有时间的概念，必然发生在某一个时间点。把事件按照时间顺序排列起来，就形成了一个事件流，也叫作数据流。「无界数据」是持续产生的数据，所以必须持续地处理无界数据流。「有界数据」，就是在一个确定的时间范围内的数据流，有开始有结束，一旦确定了就不会再改变。 可靠的容错能力 集群级容错  集群管理器集成（Hadoop YARN、Mesos或Kube">
 <meta property="og:locale">
+<meta property="og:image" content="https://shin8543.github.io/2022/03/25/Flink%E6%80%BB%E7%BB%93/image-20220328224828496.png">
+<meta property="og:image" content="https://shin8543.github.io/2022/03/25/Flink%E6%80%BB%E7%BB%93/640.png">
+<meta property="og:image" content="https://shin8543.github.io/2022/03/25/Flink%E6%80%BB%E7%BB%93/640-20220328225304888.png">
+<meta property="og:image" content="https://shin8543.github.io/2022/03/25/Flink%E6%80%BB%E7%BB%93/640-20220328225350535.png">
+<meta property="og:image" content="https://shin8543.github.io/2022/03/25/Flink%E6%80%BB%E7%BB%93/640-20220328225426303.png">
+<meta property="og:image" content="https://shin8543.github.io/2022/03/25/Flink%E6%80%BB%E7%BB%93/640-20220328225506820.png">
+<meta property="og:image" content="https://shin8543.github.io/2022/03/25/Flink%E6%80%BB%E7%BB%93/image-20220328225604602.png">
+<meta property="og:image" content="https://shin8543.github.io/2022/03/25/Flink%E6%80%BB%E7%BB%93/image-20220328225735521.png">
 <meta property="og:image" content="https://shin8543.github.io/2022/03/25/Flink%E6%80%BB%E7%BB%93/Untitled.png">
+<meta property="og:image" content="https://shin8543.github.io/2022/03/25/Flink%E6%80%BB%E7%BB%93/640-20220328225837583.png">
+<meta property="og:image" content="https://shin8543.github.io/2022/03/25/Flink%E6%80%BB%E7%BB%93/640-20220328225912253.png">
+<meta property="og:image" content="https://shin8543.github.io/2022/03/25/Flink%E6%80%BB%E7%BB%93/640-20220328225941391.png">
+<meta property="og:image" content="https://shin8543.github.io/2022/03/25/Flink%E6%80%BB%E7%BB%93/640-20220328230006729.png">
+<meta property="og:image" content="https://shin8543.github.io/2022/03/25/Flink%E6%80%BB%E7%BB%93/640-20220328230055951.png">
+<meta property="og:image" content="https://shin8543.github.io/2022/03/25/Flink%E6%80%BB%E7%BB%93/640-20220328230154238.png">
+<meta property="og:image" content="https://shin8543.github.io/2022/03/25/Flink%E6%80%BB%E7%BB%93/640-20220328230224163.png">
 <meta property="article:published_time" content="2022-03-25T13:34:15.000Z">
-<meta property="article:modified_time" content="2022-03-28T13:36:36.440Z">
+<meta property="article:modified_time" content="2022-03-28T15:03:53.779Z">
 <meta property="article:author" content="Shin">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://shin8543.github.io/2022/03/25/Flink%E6%80%BB%E7%BB%93/Untitled.png">
+<meta name="twitter:image" content="https://shin8543.github.io/2022/03/25/Flink%E6%80%BB%E7%BB%93/image-20220328224828496.png">
   
     <link rel="alternative" href="/atom.xml" title="BLOG - Shin" type="application/atom+xml">
   
@@ -236,7 +251,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">4.1k字</span>
+      <span class="post-count">3.7k字</span>
     </span>
   </span>
 
@@ -245,7 +260,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">16分</span>
+      <span class="post-count">13分</span>
     </span>
   </span>
 </div>
@@ -274,7 +289,7 @@
   <span id="more"></span></li>
 </ul>
 <p><strong><strong>运行时架构</strong></strong></p>
-<p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_png/2gY1hzDz7dTIxibEDof281h0icUabpR26LQEn41Z2GS02O6O7hHCibq5BXomrtdW1cS2VZA43BSfIaAAZoazia96Vw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">https://mmbiz.qpic.cn/mmbiz_png&#x2F;2gY1hzDz7dTIxibEDof281h0icUabpR26LQEn41Z2GS02O6O7hHCibq5BXomrtdW1cS2VZA43BSfIaAAZoazia96Vw&#x2F;640?wx_fmt&#x3D;png&amp;tp&#x3D;webp&amp;wxfrom&#x3D;5&amp;wx_lazy&#x3D;1&amp;wx_co&#x3D;1</a></p>
+<p><img src="/2022/03/25/Flink%E6%80%BB%E7%BB%93/image-20220328224828496.png" alt="image-20220328224828496"></p>
 <ul>
 <li>Flink 客户端<ul>
 <li>提交Flink作业到Flink集群</li>
@@ -310,10 +325,10 @@
 <li>IterativeStream（包含IterativeStream的Dataflow是一个有向有环图）</li>
 <li>AsyncDataStream（在DataStream上使用异步函数的能力）</li>
 </ol>
-<h3 id="处理数据API"><a href="#处理数据API" class="headerlink" title="处理数据API"></a><strong>处理数据API</strong></h3><p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_png/2gY1hzDz7dTIxibEDof281h0icUabpR26LIMnTCqaiaSmTbrAwabCRU6xKRhRy6CVxoSzBFjzmpHgkZ3krNLPyLYQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">https://mmbiz.qpic.cn/mmbiz_png&#x2F;2gY1hzDz7dTIxibEDof281h0icUabpR26LIMnTCqaiaSmTbrAwabCRU6xKRhRy6CVxoSzBFjzmpHgkZ3krNLPyLYQ&#x2F;640?wx_fmt&#x3D;png&amp;tp&#x3D;webp&amp;wxfrom&#x3D;5&amp;wx_lazy&#x3D;1&amp;wx_co&#x3D;1</a></p>
+<h3 id="处理数据API"><a href="#处理数据API" class="headerlink" title="处理数据API"></a><strong>处理数据API</strong></h3><p><img src="/2022/03/25/Flink%E6%80%BB%E7%BB%93/640.png" alt="img"></p>
 <p>处理数据API</p>
-<h2 id="核心抽象"><a href="#核心抽象" class="headerlink" title="核心抽象"></a><strong>核心抽象</strong></h2><h3 id="环境对象"><a href="#环境对象" class="headerlink" title="环境对象"></a><strong>环境对象</strong></h3><p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_png/2gY1hzDz7dTIxibEDof281h0icUabpR26L038j26g5tAyeTOeY18NdmAz7hibOHl8ibQPDViaDMAFLJvly9B86668Ag/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">https://mmbiz.qpic.cn/mmbiz_png&#x2F;2gY1hzDz7dTIxibEDof281h0icUabpR26L038j26g5tAyeTOeY18NdmAz7hibOHl8ibQPDViaDMAFLJvly9B86668Ag&#x2F;640?wx_fmt&#x3D;png&amp;tp&#x3D;webp&amp;wxfrom&#x3D;5&amp;wx_lazy&#x3D;1&amp;wx_co&#x3D;1</a></p>
-<h3 id="数据流元素"><a href="#数据流元素" class="headerlink" title="数据流元素"></a><strong>数据流元素</strong></h3><p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_png/2gY1hzDz7dTIxibEDof281h0icUabpR26LBFQ1PJShI7v90l7PCtvTgviabSdebOykwfzyiaTGEq6KARHp3f7CpYyA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">https://mmbiz.qpic.cn/mmbiz_png&#x2F;2gY1hzDz7dTIxibEDof281h0icUabpR26LBFQ1PJShI7v90l7PCtvTgviabSdebOykwfzyiaTGEq6KARHp3f7CpYyA&#x2F;640?wx_fmt&#x3D;png&amp;tp&#x3D;webp&amp;wxfrom&#x3D;5&amp;wx_lazy&#x3D;1&amp;wx_co&#x3D;1</a></p>
+<h2 id="核心抽象"><a href="#核心抽象" class="headerlink" title="核心抽象"></a><strong>核心抽象</strong></h2><h3 id="环境对象"><a href="#环境对象" class="headerlink" title="环境对象"></a><strong>环境对象</strong></h3><p><img src="/2022/03/25/Flink%E6%80%BB%E7%BB%93/640-20220328225304888.png" alt="img"></p>
+<h3 id="数据流元素"><a href="#数据流元素" class="headerlink" title="数据流元素"></a><strong>数据流元素</strong></h3><p><img src="/2022/03/25/Flink%E6%80%BB%E7%BB%93/640-20220328225350535.png" alt="img"></p>
 <ol>
 <li>StreamRecord（数据流中的一条记录｜事件）<ol>
 <li>数据的值本身</li>
@@ -333,11 +348,11 @@
 </ol>
 </li>
 </ol>
-<h3 id="Flink-异步IO"><a href="#Flink-异步IO" class="headerlink" title="Flink 异步IO"></a><strong>Flink 异步IO</strong></h3><h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a><strong>原理</strong></h3><p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_png/2gY1hzDz7dTIxibEDof281h0icUabpR26LlwicEq338A0YXNcOvx7ibnU7J04FOUibice7OG2x7vDXt73WSKvDhSMHcQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">https://mmbiz.qpic.cn/mmbiz_png&#x2F;2gY1hzDz7dTIxibEDof281h0icUabpR26LlwicEq338A0YXNcOvx7ibnU7J04FOUibice7OG2x7vDXt73WSKvDhSMHcQ&#x2F;640?wx_fmt&#x3D;png&amp;tp&#x3D;webp&amp;wxfrom&#x3D;5&amp;wx_lazy&#x3D;1&amp;wx_co&#x3D;1</a></p>
+<h3 id="Flink-异步IO"><a href="#Flink-异步IO" class="headerlink" title="Flink 异步IO"></a><strong>Flink 异步IO</strong></h3><h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a><strong>原理</strong></h3><p><img src="/2022/03/25/Flink%E6%80%BB%E7%BB%93/640-20220328225426303.png" alt="img"></p>
 <p>顺序输出模式（先收到的数据元素先输出，后续数据元素的异步函数调用无论是否先完成，都需要等待）</p>
-<p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_png/2gY1hzDz7dTIxibEDof281h0icUabpR26LKYSMNI0t0ibsvYKrsFJZc5mvkdMEgPUb5tn2zjJvng4tnhHPYJamnKw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">https://mmbiz.qpic.cn/mmbiz_png&#x2F;2gY1hzDz7dTIxibEDof281h0icUabpR26LKYSMNI0t0ibsvYKrsFJZc5mvkdMEgPUb5tn2zjJvng4tnhHPYJamnKw&#x2F;640?wx_fmt&#x3D;png&amp;tp&#x3D;webp&amp;wxfrom&#x3D;5&amp;wx_lazy&#x3D;1&amp;wx_co&#x3D;1</a></p>
-<p>无序输出模式（先处理完的数据元素先输出，不保证消息顺序）</p>
-<p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_png/2gY1hzDz7dTIxibEDof281h0icUabpR26LPB81fHJTfLz3YkvJyYpmR2bTvg7BsDZJm01HBQqMs4aUica6hIXkeXA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">https://mmbiz.qpic.cn/mmbiz_png&#x2F;2gY1hzDz7dTIxibEDof281h0icUabpR26LPB81fHJTfLz3YkvJyYpmR2bTvg7BsDZJm01HBQqMs4aUica6hIXkeXA&#x2F;640?wx_fmt&#x3D;png&amp;tp&#x3D;webp&amp;wxfrom&#x3D;5&amp;wx_lazy&#x3D;1&amp;wx_co&#x3D;1</a></p>
+<p><img src="/2022/03/25/Flink%E6%80%BB%E7%BB%93/640-20220328225506820.png" alt="img"></p>
+<p>无序输出模式（先处理完的数据元素先输出，不保证消息顺序)</p>
+<p><img src="/2022/03/25/Flink%E6%80%BB%E7%BB%93/image-20220328225604602.png" alt="image-20220328225604602"></p>
 <h3 id="数据分区"><a href="#数据分区" class="headerlink" title="数据分区"></a><strong>数据分区</strong></h3><ul>
 <li>ForwardPartitioner（用于在同一个OperatorChain中上下游算子之间的数据转发，实际上数据是直接传递给下游的）</li>
 <li>ShufflePartitioner（随机将元素进行分区，可以确保下游的Task能够均匀地获得数据）</li>
@@ -346,7 +361,7 @@
 <li>BroadcastPartitioner（将该记录广播给所有分区）</li>
 <li>KeyGroupStreamPartitioner（KeyedStream根据KeyGroup索引编号进行分区，该分区器不是提供给用户来用的）</li>
 </ul>
-<h2 id="窗口"><a href="#窗口" class="headerlink" title="窗口"></a><strong>窗口</strong></h2><h3 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a><strong>实现原理</strong></h3><p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_png/2gY1hzDz7dTIxibEDof281h0icUabpR26LWSPibcS2UTAoI5KdkFShmxBGiaZMHpITwEoqeSOjctmP2K0ep3XO7hkA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">https://mmbiz.qpic.cn/mmbiz_png&#x2F;2gY1hzDz7dTIxibEDof281h0icUabpR26LWSPibcS2UTAoI5KdkFShmxBGiaZMHpITwEoqeSOjctmP2K0ep3XO7hkA&#x2F;640?wx_fmt&#x3D;png&amp;tp&#x3D;webp&amp;wxfrom&#x3D;5&amp;wx_lazy&#x3D;1&amp;wx_co&#x3D;1</a></p>
+<h2 id="窗口"><a href="#窗口" class="headerlink" title="窗口"></a><strong>窗口</strong></h2><h3 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a><strong>实现原理</strong></h3><p><img src="/2022/03/25/Flink%E6%80%BB%E7%BB%93/image-20220328225735521.png" alt="image-20220328225735521"></p>
 <ul>
 <li>WindowAssigner（用来决定某个元素被分配到哪个&#x2F;哪些窗口中去）</li>
 <li>WindowTrigger（决定一个窗口何时能够被计算或清除，每一个窗口都拥有一个属于自己的Trigger）</li>
@@ -387,9 +402,8 @@
 </li>
 </ol>
 <h3 id="内存模型"><a href="#内存模型" class="headerlink" title="内存模型"></a><strong>内存模型</strong></h3><h3 id="内存模型图"><a href="#内存模型图" class="headerlink" title="内存模型图"></a><strong>内存模型图</strong></h3><p><img src="/2022/03/25/Flink%E6%80%BB%E7%BB%93/Untitled.png" alt="Untitled.png"></p>
-<p><a href="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==">data:image&#x2F;gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg&#x3D;&#x3D;</a></p>
 <h3 id="MemorySegment（内存段）"><a href="#MemorySegment（内存段）" class="headerlink" title="MemorySegment（内存段）"></a><strong>MemorySegment（内存段）</strong></h3><p>一个MemorySegment对应着一个32KB大小的内存块。这块内存既可以是堆上内存（Java的byte数组），也可以是堆外内存（基于Netty的DirectByteBuffer）</p>
-<h3 id="图解"><a href="#图解" class="headerlink" title="图解"></a><strong>图解</strong></h3><p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_png/2gY1hzDz7dTIxibEDof281h0icUabpR26Lvhm7oviaADm2fJVNxfuGHoMnPt6wzWvct0gX1CwY2pgdcB7Dh9ACnBw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">https://mmbiz.qpic.cn/mmbiz_png&#x2F;2gY1hzDz7dTIxibEDof281h0icUabpR26Lvhm7oviaADm2fJVNxfuGHoMnPt6wzWvct0gX1CwY2pgdcB7Dh9ACnBw&#x2F;640?wx_fmt&#x3D;png&amp;tp&#x3D;webp&amp;wxfrom&#x3D;5&amp;wx_lazy&#x3D;1&amp;wx_co&#x3D;1</a></p>
+<h3 id="图解"><a href="#图解" class="headerlink" title="图解"></a><strong>图解</strong></h3><p><img src="/2022/03/25/Flink%E6%80%BB%E7%BB%93/640-20220328225837583.png" alt="img"></p>
 <h3 id="结构"><a href="#结构" class="headerlink" title="结构"></a><strong>结构</strong></h3><ul>
 <li>BYTE_ARRAY_BASE_OFFSET（二进制字节数组的起始索引）</li>
 <li>LITTLE_ENDIAN（判断是否为Little Endian模式的字节存储顺序，若不是，就是Big Endian模式）<ul>
@@ -414,7 +428,7 @@
 <li>状态数据的划分和动态扩容</li>
 <li>状态数据的清理</li>
 </ol>
-<h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a><strong>分类</strong></h3><p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_png/2gY1hzDz7dTIxibEDof281h0icUabpR26LB4ib6ZWEQCfeicWNqEAg0EEuBnFsMTXYIWDMHHKEAjJAViaanKpyUbLHg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">https://mmbiz.qpic.cn/mmbiz_png&#x2F;2gY1hzDz7dTIxibEDof281h0icUabpR26LB4ib6ZWEQCfeicWNqEAg0EEuBnFsMTXYIWDMHHKEAjJAViaanKpyUbLHg&#x2F;640?wx_fmt&#x3D;png&amp;tp&#x3D;webp&amp;wxfrom&#x3D;5&amp;wx_lazy&#x3D;1&amp;wx_co&#x3D;1</a></p>
+<h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a><strong>分类</strong></h3><p><img src="/2022/03/25/Flink%E6%80%BB%E7%BB%93/640-20220328225912253.png" alt="img"></p>
 <h3 id="状态存储"><a href="#状态存储" class="headerlink" title="状态存储"></a><strong>状态存储</strong></h3><ul>
 <li>MemoryStateBackend：纯内存，适用于验证、测试，不推荐生产环境</li>
 <li>FsStateBackend：内存+文件，适用于长周期大规模的数据</li>
@@ -426,8 +440,8 @@
 <li>BroadcastState:变并发的时候，把这些数据分发到新的Task即可</li>
 <li>KeyState：Key-Group数量取决于最大并行度（MaxParallism）</li>
 </ul>
-<h2 id="作业提交"><a href="#作业提交" class="headerlink" title="作业提交"></a><strong>作业提交</strong></h2><p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_png/2gY1hzDz7dTIxibEDof281h0icUabpR26LMacAsdC92FR7PgPEwInorbEiaa1qSZQMsiaPjM782zXhDC54h4yqwgzg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">https://mmbiz.qpic.cn/mmbiz_png&#x2F;2gY1hzDz7dTIxibEDof281h0icUabpR26LMacAsdC92FR7PgPEwInorbEiaa1qSZQMsiaPjM782zXhDC54h4yqwgzg&#x2F;640?wx_fmt&#x3D;png&amp;tp&#x3D;webp&amp;wxfrom&#x3D;5&amp;wx_lazy&#x3D;1&amp;wx_co&#x3D;1</a></p>
-<h2 id="资源管理"><a href="#资源管理" class="headerlink" title="资源管理"></a><strong>资源管理</strong></h2><h3 id="关系图"><a href="#关系图" class="headerlink" title="关系图"></a><strong>关系图</strong></h3><p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_png/2gY1hzDz7dTIxibEDof281h0icUabpR26LxPKtq81wrJkMuDp2cngPo251B5r4WdRB2lIibFKAOXyQjPHxibloaDAA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">https://mmbiz.qpic.cn/mmbiz_png&#x2F;2gY1hzDz7dTIxibEDof281h0icUabpR26LxPKtq81wrJkMuDp2cngPo251B5r4WdRB2lIibFKAOXyQjPHxibloaDAA&#x2F;640?wx_fmt&#x3D;png&amp;tp&#x3D;webp&amp;wxfrom&#x3D;5&amp;wx_lazy&#x3D;1&amp;wx_co&#x3D;1</a></p>
+<h2 id="作业提交"><a href="#作业提交" class="headerlink" title="作业提交"></a><strong>作业提交</strong></h2><p><img src="/2022/03/25/Flink%E6%80%BB%E7%BB%93/640-20220328225941391.png" alt="img"></p>
+<h2 id="资源管理"><a href="#资源管理" class="headerlink" title="资源管理"></a><strong>资源管理</strong></h2><h3 id="关系图"><a href="#关系图" class="headerlink" title="关系图"></a><strong>关系图</strong></h3><p><img src="/2022/03/25/Flink%E6%80%BB%E7%BB%93/640-20220328230006729.png" alt="img"></p>
 <h3 id="Slot选择策略"><a href="#Slot选择策略" class="headerlink" title="Slot选择策略"></a><strong>Slot选择策略</strong></h3><ul>
 <li>LocationPreferenceSlotSelectionStrategy（位置优先的选择策略）<ul>
 <li>DefaultLocationPreferenceSlotSelectionStrategy（默认策略），该策略不考虑资源的均衡分配，会从满足条件的可用Slot集合选择第1个</li>
@@ -482,7 +496,7 @@
 <li>心跳管理</li>
 </ol>
 <h3 id="Task"><a href="#Task" class="headerlink" title="Task"></a><strong>Task</strong></h3><p>结构</p>
-<p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_png/2gY1hzDz7dTIxibEDof281h0icUabpR26LdcrpItwLZd9K0wmrfnewMN6eIJkr3LNVgry2xkf9XtDQqh0OBibTUzw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">https://mmbiz.qpic.cn/mmbiz_png&#x2F;2gY1hzDz7dTIxibEDof281h0icUabpR26LdcrpItwLZd9K0wmrfnewMN6eIJkr3LNVgry2xkf9XtDQqh0OBibTUzw&#x2F;640?wx_fmt&#x3D;png&amp;tp&#x3D;webp&amp;wxfrom&#x3D;5&amp;wx_lazy&#x3D;1&amp;wx_co&#x3D;1</a></p>
+<p><img src="/2022/03/25/Flink%E6%80%BB%E7%BB%93/640-20220328230055951.png" alt="img"></p>
 <h3 id="作业调度失败"><a href="#作业调度失败" class="headerlink" title="作业调度失败"></a><strong>作业调度失败</strong></h3><h3 id="失败异常分类"><a href="#失败异常分类" class="headerlink" title="失败异常分类"></a><strong>失败异常分类</strong></h3><ul>
 <li>NonRecoverableError：不可恢复的错误。此类错误意味着即便是重启也无法恢复作业到正常状态，一旦发生此类错误，则作业执行失败，直接退出作业执行</li>
 <li>PartitionDataMissingError：分区数据不可访问错误。下游Task无法读取上游Task产生的数据，需要重启上游的Task</li>
@@ -506,7 +520,7 @@
 <li>数据源支持断点读取</li>
 <li>外部存储支持回滚机制或者满足幂等性</li>
 </ul>
-<h3 id="图解-1"><a href="#图解-1" class="headerlink" title="图解"></a><strong>图解</strong></h3><p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_png/2gY1hzDz7dTIxibEDof281h0icUabpR26LRp7O1DO4k7bkNnza4W6icV8FjleMoia9EVvqw99ibrAuQCYGd12TFnGIg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">https://mmbiz.qpic.cn/mmbiz_png&#x2F;2gY1hzDz7dTIxibEDof281h0icUabpR26LRp7O1DO4k7bkNnza4W6icV8FjleMoia9EVvqw99ibrAuQCYGd12TFnGIg&#x2F;640?wx_fmt&#x3D;png&amp;tp&#x3D;webp&amp;wxfrom&#x3D;5&amp;wx_lazy&#x3D;1&amp;wx_co&#x3D;1</a></p>
+<h3 id="图解-1"><a href="#图解-1" class="headerlink" title="图解"></a><strong>图解</strong></h3><p><img src="/2022/03/25/Flink%E6%80%BB%E7%BB%93/640-20220328230154238.png" alt="img"></p>
 <h3 id="实现-1"><a href="#实现-1" class="headerlink" title="实现"></a><strong>实现</strong></h3><p>TwoPhaseCommitSinkFunction</p>
 <ol>
 <li>beginTransaction，开启一个事务，在临时目录中创建一个临时文件，之后写入数据到该文件中。此过程为不同的事务创建隔离，避免数据混淆。</li>
@@ -514,7 +528,7 @@
 <li>commit。在提交阶段，以原子操作的方式将上一阶段的文件写入真正的文件目录下。如果提交失败，Flink应用会重启，并调用TwoPhaseCommitSinkFunction#recoverAndCommit方法尝试恢复并重新提交事务。</li>
 <li>abort。一旦终止事务，删除临时文件。</li>
 </ol>
-<h2 id="Flink-SQL"><a href="#Flink-SQL" class="headerlink" title="Flink SQL"></a><strong>Flink SQL</strong></h2><h3 id="关系图-1"><a href="#关系图-1" class="headerlink" title="关系图"></a><strong>关系图</strong></h3><p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_png/2gY1hzDz7dTIxibEDof281h0icUabpR26LYZvzDVB6tRWDtUavgrjNgLPPW4YSib3uWC4PYicvI3PRz1DMh2hQO3kw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">https://mmbiz.qpic.cn/mmbiz_png&#x2F;2gY1hzDz7dTIxibEDof281h0icUabpR26LYZvzDVB6tRWDtUavgrjNgLPPW4YSib3uWC4PYicvI3PRz1DMh2hQO3kw&#x2F;640?wx_fmt&#x3D;png&amp;tp&#x3D;webp&amp;wxfrom&#x3D;5&amp;wx_lazy&#x3D;1&amp;wx_co&#x3D;1</a></p>
+<h2 id="Flink-SQL"><a href="#Flink-SQL" class="headerlink" title="Flink SQL"></a><strong>Flink SQL</strong></h2><h3 id="关系图-1"><a href="#关系图-1" class="headerlink" title="关系图"></a><strong>关系图</strong></h3><p><img src="/2022/03/25/Flink%E6%80%BB%E7%BB%93/640-20220328230224163.png" alt="img"></p>
 <h2 id="FLINK-API"><a href="#FLINK-API" class="headerlink" title="FLINK API"></a><strong>FLINK API</strong></h2><h3 id="DataStrem-JOIN"><a href="#DataStrem-JOIN" class="headerlink" title="DataStrem JOIN"></a><strong>DataStrem JOIN</strong></h3><p><strong>Window JOIN</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">stream.join(otherStream)</span><br><span class="line">    .where(&lt;KeySelector&gt;)</span><br><span class="line">    .equalTo(&lt;KeySelector&gt;)</span><br><span class="line">    .window(&lt;WindowAssigner&gt;)</span><br><span class="line">    .apply(&lt;JoinFunction&gt;)</span><br></pre></td></tr></table></figure>
 
