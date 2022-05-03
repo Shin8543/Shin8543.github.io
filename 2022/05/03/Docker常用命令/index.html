@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://shin8543.github.io">
-  <title>scope分类 | BLOG - Shin</title>
+  <title>Docker常用命令 | BLOG - Shin</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="scope分类compile默认就是compile，什么都不配置也就是意味着compile。compile表示被依赖项目需要参与当前项目的编译，当然后续的测试，运行周期也参与其中，是一个比较强的依赖。打包的时候通常需要包含进去。">
+  <meta name="description" content="1、绑定多个端口 1docker run -itd --name 容器名称 -p 9021:9021 -p 9022:22 镜像名称:标签 2、将容器保存为镜像 1docker commit 容器名称 镜像名称:标签 3、从容器拷贝文件 1docker cp 容器名:源路径 目标路径 1docker cp testtomcat：&#x2F;usr&#x2F;local&#x2F;tomcat&#x2F;webapps&#x2F;test&#x2F;js&#x2F;t">
 <meta property="og:type" content="article">
-<meta property="og:title" content="scope分类">
-<meta property="og:url" content="https://shin8543.github.io/2022/03/28/scope%E5%88%86%E7%B1%BB/index.html">
+<meta property="og:title" content="Docker常用命令">
+<meta property="og:url" content="https://shin8543.github.io/2022/05/03/Docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/index.html">
 <meta property="og:site_name" content="BLOG - Shin">
-<meta property="og:description" content="scope分类compile默认就是compile，什么都不配置也就是意味着compile。compile表示被依赖项目需要参与当前项目的编译，当然后续的测试，运行周期也参与其中，是一个比较强的依赖。打包的时候通常需要包含进去。">
+<meta property="og:description" content="1、绑定多个端口 1docker run -itd --name 容器名称 -p 9021:9021 -p 9022:22 镜像名称:标签 2、将容器保存为镜像 1docker commit 容器名称 镜像名称:标签 3、从容器拷贝文件 1docker cp 容器名:源路径 目标路径 1docker cp testtomcat：&#x2F;usr&#x2F;local&#x2F;tomcat&#x2F;webapps&#x2F;test&#x2F;js&#x2F;t">
 <meta property="og:locale">
-<meta property="article:published_time" content="2022-03-28T15:27:34.000Z">
-<meta property="article:modified_time" content="2022-03-28T15:29:17.357Z">
+<meta property="article:published_time" content="2022-05-03T10:30:04.000Z">
+<meta property="article:modified_time" content="2022-05-03T10:34:49.310Z">
 <meta property="article:author" content="Shin">
 <meta name="twitter:card" content="summary">
   
@@ -201,14 +201,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-scope分类" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Docker常用命令" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      scope分类
+      Docker常用命令
     </h1>
   
 
@@ -220,8 +220,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2022/03/28/scope%E5%88%86%E7%B1%BB/" class="archive-article-date">
-        <time datetime="2022-03-28T15:27:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-28</time>
+<a href="/2022/05/03/Docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="archive-article-date">
+        <time datetime="2022-05-03T10:30:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-03</time>
 </a>
 
   
@@ -234,7 +234,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">451字</span>
+      <span class="post-count">141字</span>
     </span>
   </span>
 
@@ -254,14 +254,21 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="scope分类"><a href="#scope分类" class="headerlink" title="scope分类"></a>scope分类</h1><h3 id="compile"><a href="#compile" class="headerlink" title="compile"></a>compile</h3><p>默认就是compile，什么都不配置也就是意味着compile。compile表示被依赖项目需要参与当前项目的编译，当然后续的测试，运行周期也参与其中，是一个比较强的依赖。打包的时候通常需要包含进去。</p>
-<span id="more"></span>
-
-<h3 id="test"><a href="#test" class="headerlink" title="test"></a>test</h3><p>scope为test表示依赖项目仅仅参与测试相关的工作，包括测试代码的编译，执行。比较典型的如junit。</p>
-<h3 id="runntime"><a href="#runntime" class="headerlink" title="runntime"></a>runntime</h3><p>runntime表示被依赖项目无需参与项目的编译，不过后期的测试和运行周期需要其参与。与compile相比，跳过编译而已，说实话在终端的项目（非开源，企业内部系统）中，和compile区别不是很大。比较常见的如JSR×××的实现，对应的API jar是compile的，具体实现是runtime的，compile只需要知道接口就足够了。oracle jdbc驱动架包就是一个很好的例子，一般scope为runntime。另外runntime的依赖通常和optional搭配使用，optional为true。我可以用A实现，也可以用B实现。</p>
-<h3 id="provided"><a href="#provided" class="headerlink" title="provided"></a>provided</h3><p>provided意味着打包的时候可以不用包进去，别的设施(Web Container)会提供。事实上该依赖理论上可以参与编译，测试，运行等周期。相当于compile，但是在打包阶段做了exclude的动作。</p>
-<h3 id="system"><a href="#system" class="headerlink" title="system"></a>system</h3><p>从参与度来说，也provided相同，不过被依赖项不会从maven仓库抓，而是从本地文件系统拿，一定需要配合systemPath属性使用。</p>
-<h3 id="scope的依赖传递"><a href="#scope的依赖传递" class="headerlink" title="scope的依赖传递"></a>scope的依赖传递</h3><p>A–&gt;B–&gt;C。当前项目为A，A依赖于B，B依赖于C。知道B在A项目中的scope，那么怎么知道C在A中的scope呢？答案是： 当C是test或者provided时，C直接被丢弃，A不依赖C； 否则A依赖C，C的scope继承于B的scope。</p>
+    <p>1、绑定多个端口</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -itd --name 容器名称 -p 9021:9021 -p 9022:22 镜像名称:标签</span><br></pre></td></tr></table></figure>
+<p>2、将容器保存为镜像</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker commit 容器名称 镜像名称:标签</span><br></pre></td></tr></table></figure>
+<p>3、从容器拷贝文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker cp 容器名:源路径 目标路径</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker cp testtomcat：/usr/local/tomcat/webapps/test/js/test.js /opt</span><br></pre></td></tr></table></figure>
+<p>4、拷贝文件到容器</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker cp /opt/test.js testtomcat：/usr/local/tomcat/webapps/test/js</span><br></pre></td></tr></table></figure>
+<p>5、导出镜像</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker save debian-nginx-php-empire -o d:\docker\images\image-name</span><br></pre></td></tr></table></figure>
+<p>6、镜像保存&#x2F;载入</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker load/docker save</span><br></pre></td></tr></table></figure>
+<p>7、容器导入&#x2F;导出</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker import/docker export</span><br></pre></td></tr></table></figure>
 
     
 
@@ -308,7 +315,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https://shin8543.github.io/2022/03/28/scope分类/" title="scope分类" target="_blank">https://shin8543.github.io/2022/03/28/scope分类/</a>
+          <a href="https://shin8543.github.io/2022/05/03/Docker常用命令/" title="Docker常用命令" target="_blank">https://shin8543.github.io/2022/05/03/Docker常用命令/</a>
         </li>
         
         <li>
@@ -375,7 +382,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://shin8543.github.io/2022/03/28/scope%E5%88%86%E7%B1%BB/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://shin8543.github.io/2022/05/03/Docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -390,18 +397,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2022/05/03/Docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Docker常用命令
-        
-      </div>
-    </a>
   
-  
-    <a href="/2022/03/25/Flink%E6%80%BB%E7%BB%93/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Flink总结</div>
+    <a href="/2022/03/28/scope%E5%88%86%E7%B1%BB/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">scope分类</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -428,7 +426,7 @@
 
 
 
-<div id="SOHUCS" sid="scope分类" ></div> 
+<div id="SOHUCS" sid="Docker常用命令" ></div> 
 <script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
 <script type="text/javascript">
     window.changyan.api.config({
